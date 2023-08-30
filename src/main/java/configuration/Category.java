@@ -8,15 +8,22 @@ public class Category {
     private String name;
     private List<RssInfo> rssInfos;
 
-    @JsonProperty("categoryName")
-    public String getCategoryName() {
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+    @JsonProperty("name")
+    public String setName() {
         return name;
     }
 
 
-    @JsonProperty("urls")
+    @JsonProperty("RssInfos")
     public List<RssInfo> getRssInfo() {
         return rssInfos;
     }
-
+    @JsonProperty("RssInfos")
+    public List<RssInfo> setRssInfo() {
+        return rssInfos;
+    }
 }

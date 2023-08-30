@@ -3,10 +3,6 @@ package configuration;
 import java.util.List;
 
 public class NewsConfig {
-    public NewsConfig(String cfg) {
-        // TODO Auto-generated constructor stub
-    }
-
     public List<Category> getCategories() {
         return categories;
     }
@@ -16,5 +12,4 @@ public class NewsConfig {
     }
 
     List<Category> categories;
-
 }

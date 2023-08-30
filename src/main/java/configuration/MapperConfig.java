@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class MapperConfig {
-    public MapperConfig(String cfg) {
-        // TODO Auto-generated constructor stub
-    }
-
     private List<Channel> channels;
 
     @JsonProperty("channels")

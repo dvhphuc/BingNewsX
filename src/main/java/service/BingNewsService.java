@@ -1,8 +1,11 @@
 package service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import configuration.*;
 import model.AdTopic;
 import model.Article;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,13 +13,14 @@ public class BingNewsService {
     static NewsConfig newsConfig;
     static MapperConfig mapperConfig;
 
-    public static void readBingNewsConfig(NewsConfig _newsConfig) {
-        newsConfig = _newsConfig;
+    public static void readBingNewsConfig(String newsCfgPath) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        newsConfig = objectMapper.readValue(new File(newsCfgPath), NewsConfig.class);
+        return;
+
     }
 
-    public static void readMapperConfig(MapperConfig _mapperConfig) {
-        mapperConfig = _mapperConfig;
-    }
+    public static void readMapperConfig(String mapperCfgPath) throws Exception
 
     public static List<Article> getAllArticles() throws Exception {
         //TODO: Get RssUrl for each category in config
@@ -30,7 +34,7 @@ public class BingNewsService {
                 var channelId = RssInfo.getChannelID();
                 var rssUrl = RssInfo.getURL();
                 var items = ReaderRSSService.getRssItems(rssUrl);
-                var mappedItem = MapperService.mapToArticles(items, mapperConfig, channelId);
+                var mappedItem = MapperService.mapItemsToArticles(items, mapperConfig, channelId);
 
                 articles.addAll(mappedItem);
             }
@@ -40,8 +44,8 @@ public class BingNewsService {
     }
 
     public static List<AdTopic> getAllAdTopic() {
-        //Db db = new Db();
-        //return db.getAllAdTopic();
+//        Db db = new Db();
+//        return db.getAllAdTopic();
         return null;
     }
 

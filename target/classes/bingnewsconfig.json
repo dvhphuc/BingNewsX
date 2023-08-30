@@ -1,0 +1,30 @@
+{
+  "categories": [
+    {
+      "categoryName": "Tech",
+      "RssInfos": [
+        {
+          "channelId": "vnexpress",
+          "url": "https://example.com/channel1.1"
+        },
+        {
+          "channelId": "laodong",
+          "url": "https://example.com/channel1.2"
+        }
+      ]
+    },
+    {
+      "categoryName": "Health",
+      "RssInfos": [
+        {
+          "channelId": "thanhnien",
+          "url": "https://example.com/channel2.1"
+        },
+        {
+          "channelId": "vnexpress",
+          "url": "https://example.com/channel2.2"
+        }
+      ]
+    }
+  ]
+}

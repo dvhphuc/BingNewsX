@@ -1,0 +1,26 @@
+{
+  "channels": {
+    "vnexpress": {
+      "mapSrcDes": {
+        "title": "title",
+        "pubDate": "pubDate",
+        "description.img#scr" : "imgUrl"
+      }
+    },
+    "laodong": {
+      "mapSrcDes": {
+        "title": "title",
+        "pubDate": "pubDate",
+        "enclosure#src" : "imgUrl"
+      }
+    },
+    "channel3": {
+      "mapSrcDes": {
+        "title": "title",
+        "pubDate": "pubDate",
+        "img" : "imgUrl",
+        "guid" : "guid"
+      }
+    }
+  }
+}

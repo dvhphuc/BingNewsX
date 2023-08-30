@@ -12,9 +12,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws Exception {
         String newsCfg = "src/main/resources/bingnewsconfig.json";
-        BingNewsService.readBingNewsConfig(new NewsConfig(newsCfg));
+        BingNewsService.readBingNewsConfig(newsCfg);
         String mapperCfg = "src/main/resources/mapperconfig.json";
-        BingNewsService.readMapperConfig(new MapperConfig(mapperCfg));
+        BingNewsService.readMapperConfig(mapperCfg);
         String trendingCfg = "src/main/resources/trendingconfig.json";
         BingNewsService.readTrendingConfig(new TrendingConfig(trendingCfg));
 
@@ -26,7 +26,6 @@ public class Main {
         var weatherInfo = BingNewsService.getWeatherInfo();
         var financeInfo = BingNewsService.getFinanceInfo();
         var sportsInfo = BingNewsService.getSportsInfo();
-
 
     }
 
