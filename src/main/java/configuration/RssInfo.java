@@ -2,9 +2,9 @@ package configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class URL {
+public class RssInfo {
     private String channelId;
-    private String rssUrl;
+    private String url;
 
     @JsonProperty("channelId")
     public String getChannelID() {
@@ -18,11 +18,11 @@ public class URL {
 
     @JsonProperty("url")
     public String getURL() {
-        return rssUrl;
+        return url;
     }
 
     @JsonProperty("url")
     public void setURL(String value) {
-        this.rssUrl = value;
+        this.url = value;
     }
 }

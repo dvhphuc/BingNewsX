@@ -1,15 +1,14 @@
 package service;
 
-import configuration.MapperConfig;
-import configuration.NewsConfig;
-import configuration.TrendingConfig;
+import configuration.*;
+import model.AdTopic;
 import model.Article;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BingNewsService {
     static NewsConfig newsConfig;
-    private static MapperConfig mapperConfig;
+    static MapperConfig mapperConfig;
 
     public static void readBingNewsConfig(NewsConfig _newsConfig) {
         newsConfig = _newsConfig;
@@ -20,15 +19,16 @@ public class BingNewsService {
     }
 
     public static List<Article> getAllArticles() throws Exception {
+        //TODO: Get RssUrl for each category in config
+        //TODO: Get RssItems for each RssUrl
+        //TODO: Map RssItems to Articles
         var articles = new ArrayList<Article>();
-        String cfg = "";
-        readBingNewsConfig(new NewsConfig(cfg));
         var categories = newsConfig.getCategories();
 
         for (var category : categories) {
-            for (var rssUrl_channel : category.getUrls()) {
-                var channelId = rssUrl_channel.getChannelID();
-                var rssUrl = rssUrl_channel.getURL();
+            for (var RssInfo : category.getRssInfo()) {
+                var channelId = RssInfo.getChannelID();
+                var rssUrl = RssInfo.getURL();
                 var items = ReaderRSSService.getRssItems(rssUrl);
                 var mappedItem = MapperService.mapToArticles(items, mapperConfig, channelId);
 
@@ -57,8 +57,22 @@ public class BingNewsService {
 
     }
 
-    public class AdTopic {
-        // Order by ......
+    public static WeatherInfo getWeatherInfo() {
+        return null;
     }
+
+
+    public static FinanceInfo getFinanceInfo() {
+        return null;
+    }
+
+    public static SportInfo getSportsInfo() {
+        return null;
+    }
+
+    public static Feed getFeed365() {
+        return null;
+    }
+
 }
 
