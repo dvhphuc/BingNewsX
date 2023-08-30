@@ -1,25 +1,19 @@
 package configuration;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class MapperConfig {
     private List<Channel> channels;
 
     @JsonProperty("channels")
-    public List<Channel> getChannels() {
-        return channels;
-    }
-
+    public List<Channel> getChannels() { return channels; }
     @JsonProperty("channels")
-    public void setChannels(List<Channel> value) {
-        this.channels = value;
-    }
+    public void setChannels(List<Channel> value) { this.channels = value; }
 
-    public Channel getChannelById(String name) {
+    public Channel getChannelById(String channelID) {
         for (Channel channel : channels) {
-            if (channel.getName().equals(name)) {
+            if (channel.getChannelID().equals(channelID)) {
                 return channel;
             }
         }

@@ -1,26 +1,24 @@
 {
-  "channels": {
-    "vnexpress": {
+  "channels": [
+    {
+      "channelId": "vnexpress",
       "mapSrcDes": {
         "title": "title",
         "pubDate": "pubDate",
-        "description.img#scr" : "imgUrl"
+        "imgUrl": "description.img#scr",
+        "sourceLink": "link",
+        "guid": "guid"
       }
     },
-    "laodong": {
+    {
+      "channelId": "laodong",
       "mapSrcDes": {
         "title": "title",
         "pubDate": "pubDate",
-        "enclosure#src" : "imgUrl"
-      }
-    },
-    "channel3": {
-      "mapSrcDes": {
-        "title": "title",
-        "pubDate": "pubDate",
-        "img" : "imgUrl",
-        "guid" : "guid"
+        "guid": "guid",
+        "sourceLink": "link",
+        "imgUrl": "enclosure#src"
       }
     }
-  }
+  ]
 }

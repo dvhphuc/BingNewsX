@@ -3,39 +3,42 @@ package service;
 import configuration.MapperConfig;
 import model.Article;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MapperService {
-    public MapperService(String cfg) {
-        BingNewsService.readMapperConfig(new MapperConfig(cfg));
+    public MapperService() {
+    }
+
+    public static String getContentInTag(Node node, String tags) {
+        for (var tag : tags.split("\\.")) {
+                Element element = (Element) node;
+                node = element.getElementsByTagName(tag).item(0);
+        }
+        var attribute = Arrays.stream(tags.split("#")).toList().get(tags.split("#").length - 1);
+        return node.getAttributes().getNamedItem(attribute).getNodeValue();
     }
 
     public static List<Article> mapItemsToArticles(NodeList items, MapperConfig mapperConfig, String channelId) throws Exception {
         var articles = new ArrayList<Article>();
         var channel = mapperConfig.getChannelById(channelId);
-        var channelMapSrcDesmapSrcDes = channel.getMapSrcDes();
+        var channelMapSrcDesmapSrcDes = channel.getMapSrcDES();
 
-//         For each item in the RSS feed, map it to an Article object
-//        for (var item : items) {
-//            des = channelMapSrcDesmapSrcDes.des;
-//            src = channelMapSrcDesmapSrcDes.scr;
-//            var atc = new Article();
-//            atc.des = item.scr;
-//            articles.add(atc);
-//        }
         for (int i=0; i<items.getLength(); ++i) {
             var item = items.item(i);
-            var element = (Element) item;
             var atc = new Article();
 
-            atc.setChannel("test");
-            atc.setImgUrl("test");
-            atc.setTitle("test");
+            for (var key : channelMapSrcDesmapSrcDes.keySet()) {
+                var value = channelMapSrcDesmapSrcDes.get(key);
+                var content = getContentInTag(item, value);
+                //atc.setField(key, content);
+                System.out.println(key + ": " + content);
+            }
 
-            articles.add(atc);
         }
         return articles;
     }

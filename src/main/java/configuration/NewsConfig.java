@@ -1,15 +1,13 @@
 package configuration;
 
+import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class NewsConfig {
-    public List<Category> getCategories() {
-        return categories;
-    }
+    private List<Category> categories;
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    List<Category> categories;
+    @JsonProperty("categories")
+    public List<Category> getCategories() { return categories; }
+    @JsonProperty("categories")
+    public void setCategories(List<Category> value) { this.categories = value; }
 }

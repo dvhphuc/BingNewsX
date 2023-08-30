@@ -1,25 +1,20 @@
 package configuration;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.HashMap;
 
 public class Channel {
-    private String name;
+    private String channelID;
+    private HashMap<String, String> mapSrcDES;
 
-    public String getName() {
-        return name;
-    }
+    @JsonProperty("channelId")
+    public String getChannelID() { return channelID; }
+    @JsonProperty("channelId")
+    public void setChannelID(String value) { this.channelID = value; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public HashMap<String, String> getMapSrcDes() {
-        return mapSrcDes;
-    }
-
-    public void setMapSrcDes(HashMap<String, String> mapSrcDes) {
-        this.mapSrcDes = mapSrcDes;
-    }
-
-    private HashMap<String, String> mapSrcDes = new HashMap();
+    @JsonProperty("mapSrcDes")
+    public HashMap<String, String> getMapSrcDES() { return mapSrcDES; }
+    @JsonProperty("mapSrcDes")
+    public void setMapSrcDES(HashMap<String, String> value) { this.mapSrcDES = value; }
 }

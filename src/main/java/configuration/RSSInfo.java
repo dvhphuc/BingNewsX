@@ -2,7 +2,7 @@ package configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RssInfo {
+public class RSSInfo {
     private String channelId;
     private String url;
 

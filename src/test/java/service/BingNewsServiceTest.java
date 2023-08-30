@@ -8,17 +8,17 @@ import org.junit.jupiter.api.Test;
 class BingNewsServiceTest {
 
     @Test
-    void readBingNewsConfig() {
+    void readBingNewsConfig() throws Exception {
         String newsCfg = "src/main/resources/bingnewsconfig.json";
-        BingNewsService.readBingNewsConfig(new NewsConfig(newsCfg));
+        BingNewsService.readBingNewsConfig(newsCfg);
 
         assert (BingNewsService.newsConfig.getCategories().size() > 0);
     }
 
     @Test
-    void readMapperConfig() {
+    void readMapperConfig() throws Exception {
         String mapperCfg = "src/main/resources/mapperconfig.json";
-        BingNewsService.readMapperConfig(new MapperConfig(mapperCfg));
+        BingNewsService.readMapperConfig(mapperCfg);
 
         assert (BingNewsService.mapperConfig.getChannels().size() > 0);
     }
@@ -27,8 +27,8 @@ class BingNewsServiceTest {
     void testGetAllArticles() throws Exception {
         String newsCfg = "src/main/resources/bingnewsconfig.json";
         String mapperCfg = "src/main/resources/mapperconfig.json";
-        BingNewsService.readBingNewsConfig(new NewsConfig(newsCfg));
-        BingNewsService.readMapperConfig(new MapperConfig(mapperCfg));
+        BingNewsService.readBingNewsConfig(newsCfg);
+        BingNewsService.readMapperConfig(mapperCfg);
 
         var articles = BingNewsService.getAllArticles();
 

@@ -1,29 +1,18 @@
 package configuration;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class Category {
-    private String name;
-    private List<RssInfo> rssInfos;
+    private String categoryName;
+    private List<RSSInfo> rssInfos;
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
-    @JsonProperty("name")
-    public String setName() {
-        return name;
-    }
-
+    @JsonProperty("categoryName")
+    public String getCategoryName() { return categoryName; }
+    @JsonProperty("categoryName")
+    public void setCategoryName(String value) { this.categoryName = value; }
 
     @JsonProperty("RssInfos")
-    public List<RssInfo> getRssInfo() {
-        return rssInfos;
-    }
+    public List<RSSInfo> getRSSInfos() { return rssInfos; }
     @JsonProperty("RssInfos")
-    public List<RssInfo> setRssInfo() {
-        return rssInfos;
-    }
+    public void setRSSInfos(List<RSSInfo> value) { this.rssInfos = value; }
 }

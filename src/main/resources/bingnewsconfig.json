@@ -5,11 +5,11 @@
       "RssInfos": [
         {
           "channelId": "vnexpress",
-          "url": "https://example.com/channel1.1"
+          "url": "https://vnexpress.net/rss/khoa-hoc.rss"
         },
         {
           "channelId": "laodong",
-          "url": "https://example.com/channel1.2"
+          "url": "https://laodong.vn/rss/cong-doan.rss"
         }
       ]
     },
@@ -17,12 +17,12 @@
       "categoryName": "Health",
       "RssInfos": [
         {
-          "channelId": "thanhnien",
-          "url": "https://example.com/channel2.1"
+          "channelId": "vnexpress",
+          "url": "https://vnexpress.net/rss/phap-luat.rss"
         },
         {
-          "channelId": "vnexpress",
-          "url": "https://example.com/channel2.2"
+          "channelId": "laodong",
+          "url": "https://laodong.vn/rss/the-thao.rss"
         }
       ]
     }

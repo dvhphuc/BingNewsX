@@ -20,7 +20,11 @@ public class BingNewsService {
 
     }
 
-    public static void readMapperConfig(String mapperCfgPath) throws Exception
+    public static void readMapperConfig(String mapperCfgPath) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        mapperConfig = objectMapper.readValue(new File(mapperCfgPath), MapperConfig.class);
+        return;
+    }
 
     public static List<Article> getAllArticles() throws Exception {
         //TODO: Get RssUrl for each category in config
@@ -30,7 +34,7 @@ public class BingNewsService {
         var categories = newsConfig.getCategories();
 
         for (var category : categories) {
-            for (var RssInfo : category.getRssInfo()) {
+            for (var RssInfo : category.getRSSInfos()) {
                 var channelId = RssInfo.getChannelID();
                 var rssUrl = RssInfo.getURL();
                 var items = ReaderRSSService.getRssItems(rssUrl);
