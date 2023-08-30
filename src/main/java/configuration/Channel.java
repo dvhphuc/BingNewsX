@@ -14,7 +14,7 @@ public class Channel {
     public void setChannelID(String value) { this.channelID = value; }
 
     @JsonProperty("mapSrcDes")
-    public HashMap<String, String> getMapSrcDES() { return mapSrcDES; }
+    public HashMap<String, String> getMapperConfig() { return mapSrcDES; }
     @JsonProperty("mapSrcDes")
     public void setMapSrcDES(HashMap<String, String> value) { this.mapSrcDES = value; }
 }

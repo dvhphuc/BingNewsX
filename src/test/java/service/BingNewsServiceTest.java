@@ -48,7 +48,7 @@ class BingNewsServiceTest {
     }
 
     @Test
-    void getTrendingNews() {
+    void getTrendingNews() { //TODO: add https://rapidapi.com/blog/rapidapi-featured-news-apis/
         var trendingNews = BingNewsService.getTrendingNews();
         assert (trendingNews.size() > 0);
     }

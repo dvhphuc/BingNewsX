@@ -6,7 +6,7 @@ public class Article {
     String title;
     String imgUrl;
     String channel;
-    Date pubDate;
+    String pubDate;
 
     public String getTitle() {
         return title;
@@ -32,11 +32,11 @@ public class Article {
         this.channel = channel;
     }
 
-    public Date getPubDate() {
+    public String getPubDate() {
         return pubDate;
     }
 
-    public void setPubDate(Date pubDate) {
+    public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
 
@@ -50,4 +50,23 @@ public class Article {
 
     String sourceLink;
 
+    public void setField(String key, String content) {
+        switch (key) {
+            case "title":
+                this.setTitle(content);
+                break;
+            case "imgUrl":
+                this.setImgUrl(content);
+                break;
+            case "channel":
+                this.setChannel(content);
+                break;
+            case "pubDate":
+                this.setPubDate(content);
+                break;
+            case "sourceLink":
+                this.setSourceLink(content);
+                break;
+        }
+    }
 }

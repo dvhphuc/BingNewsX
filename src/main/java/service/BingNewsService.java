@@ -27,9 +27,6 @@ public class BingNewsService {
     }
 
     public static List<Article> getAllArticles() throws Exception {
-        //TODO: Get RssUrl for each category in config
-        //TODO: Get RssItems for each RssUrl
-        //TODO: Map RssItems to Articles
         var articles = new ArrayList<Article>();
         var categories = newsConfig.getCategories();
 
@@ -38,9 +35,9 @@ public class BingNewsService {
                 var channelId = RssInfo.getChannelID();
                 var rssUrl = RssInfo.getURL();
                 var items = ReaderRSSService.getRssItems(rssUrl);
-                var mappedItem = MapperService.mapItemsToArticles(items, mapperConfig, channelId);
+                var mappedItems = MapperService.mapItemsToArticles(items, mapperConfig, channelId);
 
-                articles.addAll(mappedItem);
+                articles.addAll(mappedItems);
             }
         }
 
@@ -50,6 +47,7 @@ public class BingNewsService {
     public static List<AdTopic> getAllAdTopic() {
 //        Db db = new Db();
 //        return db.getAllAdTopic();
+        //ORM
         return null;
     }
 
@@ -65,7 +63,7 @@ public class BingNewsService {
 
     }
 
-    public static WeatherInfo getWeatherInfo() {
+    public static WeatherInfo getWeatherInfo() { //
         return null;
     }
 

@@ -28,8 +28,19 @@ public class Main {
 //        var financeInfo = BingNewsService.getFinanceInfo();
 //        var sportsInfo = BingNewsService.getSportsInfo();
 
-        String str = "asd";
-        System.out.println(Arrays.stream(str.split("\\.")).toList().get(0));
+        var attributeInDestination = "";
+        String destination = "description.img#src";
+        if (destination.contains("#")) {
+            attributeInDestination = destination.split("#")[1];
+            destination = destination.split("#")[0];
+        }
+
+        var tagsList = destination.split("\\.");
+
+        for (var tag : tagsList) {
+            System.out.println(tag);
+        }
+        System.out.println(attributeInDestination);
     }
 
 }

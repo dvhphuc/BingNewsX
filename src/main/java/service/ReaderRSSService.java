@@ -14,6 +14,7 @@ public class ReaderRSSService {
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document doc = db.parse(new URL(rssUrl).openStream());
         var listItems = doc.getElementsByTagName("item");
+
         return listItems;
     }
 }

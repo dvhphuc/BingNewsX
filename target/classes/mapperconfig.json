@@ -5,7 +5,7 @@
       "mapSrcDes": {
         "title": "title",
         "pubDate": "pubDate",
-        "imgUrl": "description.img#scr",
+        "imgUrl": "description",
         "sourceLink": "link",
         "guid": "guid"
       }
@@ -17,7 +17,7 @@
         "pubDate": "pubDate",
         "guid": "guid",
         "sourceLink": "link",
-        "imgUrl": "enclosure#src"
+        "imgUrl": "enclosure#url"
       }
     }
   ]
