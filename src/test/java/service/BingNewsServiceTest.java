@@ -42,9 +42,10 @@ class BingNewsServiceTest {
     }
 
     @Test
-    void getTopNews() {
-        var topNews = BingNewsService.getTopNews();
-        assert (topNews.size() > 0);
+    void getTopNews() throws Exception {
+        BingNewsService.readTopNewsAPIConfig("src/main/resources/topnewsAPIconfig.json");
+        var topNewses = BingNewsService.getTopNews();
+        assert (topNewses.size() > 0);
     }
 
     @Test

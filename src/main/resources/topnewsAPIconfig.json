@@ -1,0 +1,32 @@
+[
+  {
+    "name": "NewsData API",
+    "url": "https://newsdata.io/api/1/news",
+    "queryParams": {
+      "country": "vi",
+      "apikey": "pub_2754268810ac4a75101d351556c0101c03c41"
+    },
+    "responseKey": "results",
+    "fields": [
+      "title",
+      "source",
+      "published",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "name": "Other API",
+    "url": "https://example.com/api/endpoint",
+    "queryParams": {
+      "param1": "value1",
+      "param2": "value2"
+    },
+    "responseKey": "data",
+    "fields": [
+      "field1",
+      "field2",
+      "field3"
+    ]
+  }
+]

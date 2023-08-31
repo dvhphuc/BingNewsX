@@ -4,10 +4,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import configuration.*;
 import model.AdTopic;
 import model.Article;
+import model.TopNews;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Node;
 
 import javax.lang.model.element.Element;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +61,47 @@ public class BingNewsService {
         return null;
     }
 
-    public static List<Article> getTopNews() {
-        return null;
+    public static List<TopNews> getTopNews() throws Exception {
+        // 1. From config, get api url
+        // 2. Get data from api
+        // 3. Parse data to TopNews
+        // 4. Return list of TopNews
+        var topNewses = new ArrayList<TopNews>();
+        var apiUrls = topNewsAPIConfig.apiUrls;
+
+        for (var apiUrl : apiUrls) {
+                topNewses.addAll(getTopNews(apiUrl));
+        }
+
+        URL url = new URL(apiUrl);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+
+        int responseCode = connection.getResponseCode();
+
+        var topNewses = new ArrayList<TopNews>();
+
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            JSONObject jsonResponse = new JSONObject(response.toString());
+            JSONArray articles = jsonResponse.getJSONArray("results");
+            var topNews = new TopNews();
+            for (int i = 0; i < articles.length(); i++) {
+                JSONObject news = articles.getJSONObject(i);
+                //Base on config, map json object news to TopNews
+                topNewses.add(topNews);
+            }
+        }
+
+        return topNewses;
     }
 
     public static List<Article> getTrendingNews() {
@@ -83,5 +129,8 @@ public class BingNewsService {
         return null;
     }
 
+    public static void readTopNewsAPIConfig(String cfgPath) {
+
+    }
 }
 
