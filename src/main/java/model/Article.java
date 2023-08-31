@@ -8,6 +8,15 @@ public class Article {
     String channel;
     String pubDate;
 
+    public String getGuid() {
+        return guid;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
+    }
+
+    String guid;
     public String getTitle() {
         return title;
     }
@@ -50,23 +59,4 @@ public class Article {
 
     String sourceLink;
 
-    public void setField(String key, String content) {
-        switch (key) {
-            case "title":
-                this.setTitle(content);
-                break;
-            case "imgUrl":
-                this.setImgUrl(content);
-                break;
-            case "channel":
-                this.setChannel(content);
-                break;
-            case "pubDate":
-                this.setPubDate(content);
-                break;
-            case "sourceLink":
-                this.setSourceLink(content);
-                break;
-        }
-    }
 }

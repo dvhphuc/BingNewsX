@@ -3,10 +3,19 @@ package org.example;
 import configuration.MapperConfig;
 import configuration.NewsConfig;
 import configuration.TrendingConfig;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.parser.Parser;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
 import service.BingNewsService;
+import service.ReaderRSSService;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.ByteArrayInputStream;
+import java.io.StringReader;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,19 +37,6 @@ public class Main {
 //        var financeInfo = BingNewsService.getFinanceInfo();
 //        var sportsInfo = BingNewsService.getSportsInfo();
 
-        var attributeInDestination = "";
-        String destination = "description.img#src";
-        if (destination.contains("#")) {
-            attributeInDestination = destination.split("#")[1];
-            destination = destination.split("#")[0];
-        }
-
-        var tagsList = destination.split("\\.");
-
-        for (var tag : tagsList) {
-            System.out.println(tag);
-        }
-        System.out.println(attributeInDestination);
     }
 
 }

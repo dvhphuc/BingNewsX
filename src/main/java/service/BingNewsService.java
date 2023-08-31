@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import configuration.*;
 import model.AdTopic;
 import model.Article;
+import org.w3c.dom.Node;
 
+import javax.lang.model.element.Element;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class BingNewsService {
         mapperConfig = objectMapper.readValue(new File(mapperCfgPath), MapperConfig.class);
         return;
     }
+
 
     public static List<Article> getAllArticles() throws Exception {
         var articles = new ArrayList<Article>();
