@@ -1,8 +1,6 @@
 package service;
 
 
-import configuration.MapperConfig;
-import configuration.NewsConfig;
 import org.junit.jupiter.api.Test;
 
 class BingNewsServiceTest {
@@ -42,9 +40,16 @@ class BingNewsServiceTest {
     }
 
     @Test
-    void getTopNews() throws Exception {
+    void testReadTopNewsAPIConfig() throws Exception {
         BingNewsService.readTopNewsAPIConfig("src/main/resources/topnewsAPIconfig.json");
-        var topNewses = BingNewsService.getTopNews();
+        assert (BingNewsService.topNewsAPIConfig.getName() != null);
+    }
+
+    @Test
+    void testGetAllTopNews() throws Exception {
+        BingNewsService.readTopNewsAPIConfig("src/main/resources/topnewsAPIconfig.json");
+        var topNewses = BingNewsService.getAllTopNews();
+
         assert (topNewses.size() > 0);
     }
 

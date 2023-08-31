@@ -1,24 +1,5 @@
 package org.example;
 
-import configuration.MapperConfig;
-import configuration.NewsConfig;
-import configuration.TrendingConfig;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.parser.Parser;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import service.BingNewsService;
-import service.ReaderRSSService;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.ByteArrayInputStream;
-import java.io.StringReader;
-import java.util.Arrays;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) throws Exception {
 //        String newsCfg = "src/main/resources/bingnewsconfig.json";

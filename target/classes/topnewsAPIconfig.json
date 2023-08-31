@@ -6,10 +6,11 @@
     "apikey": "pub_2754268810ac4a75101d351556c0101c03c41"
   },
   "responseKey": "results",
-  "mapper": {
-    "title": "title",
-    "source": "source",
-    "pubDate": "published",
-    "url": "sourceLink"
-  }
+  "fields": [
+    "title",
+    "source",
+    "published",
+    "description",
+    "url"
+  ]
 }
