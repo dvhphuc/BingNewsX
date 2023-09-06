@@ -1,6 +1,10 @@
 package service;
 
 
+import configuration.EndpointConfig;
+import configuration.MapperConfig;
+import configuration.NewsConfig;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 class BingNewsServiceTest {
@@ -8,15 +12,15 @@ class BingNewsServiceTest {
     @Test
     void readBingNewsConfig() throws Exception {
         String newsCfg = "src/main/resources/bingnewsconfig.json";
-        BingNewsService.readBingNewsConfig(newsCfg);
+        //BingNewsService.newsConfig = BingNewsService.readConfig(newsCfg, NewsConfig.class);
 
         assert (BingNewsService.newsConfig.getCategories().size() > 0);
     }
 
     @Test
     void readMapperConfig() throws Exception {
-        String mapperCfg = "src/main/resources/mapperconfig.json";
-        BingNewsService.readMapperConfig(mapperCfg);
+        String mapperCfg = "src/main/resources/rssmapperconfig.json";
+        //BingNewsService.mapperConfig = BingNewsService.readConfig(mapperCfg, MapperConfig.class);
 
         assert (BingNewsService.mapperConfig.getChannels().size() > 0);
     }
@@ -24,9 +28,9 @@ class BingNewsServiceTest {
     @Test
     void testGetAllArticles() throws Exception {
         String newsCfg = "src/main/resources/bingnewsconfig.json";
-        String mapperCfg = "src/main/resources/mapperconfig.json";
-        BingNewsService.readBingNewsConfig(newsCfg);
-        BingNewsService.readMapperConfig(mapperCfg);
+        String mapperCfg = "src/main/resources/rssmapperconfig.json";
+        //BingNewsService.newsConfig = BingNewsService.readConfig(newsCfg, NewsConfig.class);
+        //BingNewsService.mapperConfig = BingNewsService.readConfig(mapperCfg, MapperConfig.class);
 
         var articles = BingNewsService.getAllArticles();
 
@@ -39,18 +43,21 @@ class BingNewsServiceTest {
         assert (adTopics.size() > 0);
     }
 
-    @Test
-    void testReadTopNewsAPIConfig() throws Exception {
-        BingNewsService.readTopNewsAPIConfig("src/main/resources/topnewsAPIconfig.json");
-        assert (BingNewsService.topNewsAPIConfig.getName() != null);
-    }
+//    @Test
+//    void testReadTopNewsAPIConfig() throws Exception {
+//        BingNewsService.readTopNewsAPIConfig("src/main/resources/endpointTopNewsConfig.json");
+//        System.out.println(BingNewsService.endpointConfig.getEndpoints());
+//        assert (BingNewsService.endpointConfig.getEndpoints().size() > 0);
+//    }
 
     @Test
     void testGetAllTopNews() throws Exception {
-        BingNewsService.readTopNewsAPIConfig("src/main/resources/topnewsAPIconfig.json");
-        var topNewses = BingNewsService.getAllTopNews();
-
+        //BingNewsService.endpointConfig =
+        //        BingNewsService.readConfig("src/main/resources/endpointTopNewsConfig.json", EndpointConfig.class);
+        var topNewses = BingNewsService.getTopNews();
+        topNewses.forEach(article -> System.out.println(article.getTitle()));
         assert (topNewses.size() > 0);
+
     }
 
     @Test
@@ -71,11 +78,6 @@ class BingNewsServiceTest {
         assert (financeInfo != null);
     }
 
-    @Test
-    void getSportsInfo() {
-        var sportsInfo = BingNewsService.getSportsInfo();
-        assert (sportsInfo != null);
-    }
 
     @Test
     void getFeed365() {

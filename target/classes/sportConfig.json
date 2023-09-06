@@ -1,0 +1,24 @@
+{
+    "sportapis":
+      [
+        {
+          "name" : "apifootball",
+          "url" : "https://apiv3.apifootball.com/",
+          "apiKey" : "817hr30juyhj",
+          "responseKey" : "match",
+          "mapper": {
+            "league" : "league_name",
+            "homeTeam" : "match_hometeam_name",
+            "awayTeam" : "match_awayteam_name",
+            "homeScore" : "match_hometeam_score",
+            "awayScore" : "match_awayteam_score"
+          }
+        },
+        {
+
+        },
+        {
+
+        }
+      ]
+}

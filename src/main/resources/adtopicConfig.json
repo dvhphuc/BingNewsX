@@ -1,0 +1,15 @@
+{
+  "advertisings" : [
+    {
+      "brand": "Nike",
+      "title": "Just do it",
+      "imgUrl": ""
+    },
+    {
+      "brand": "Vinfast",
+      "title": "Vietnam's car",
+      "imgUrl": ""
+    },
+    {}
+  ]
+}

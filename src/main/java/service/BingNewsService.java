@@ -4,30 +4,30 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import configuration.*;
 import model.AdTopic;
 import model.Article;
-import model.TopNews;
+import org.json.JSONObject;
+import org.w3c.dom.Node;
 
 import java.io.File;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BingNewsService {
     static NewsConfig newsConfig;
     static MapperConfig mapperConfig;
-    static TopNewsConfig topNewsAPIConfig;
+    static EndpointConfig endpointConfig;
 
-    public static void readBingNewsConfig(String newsCfgPath) throws Exception {
+    public static <T> T readConfig(String configPath, Class<T> configClass) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        newsConfig = objectMapper.readValue(new File(newsCfgPath), NewsConfig.class);
-        return;
-
+        return objectMapper.readValue(new File(configPath), configClass);
     }
 
-    public static void readMapperConfig(String mapperCfgPath) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        mapperConfig = objectMapper.readValue(new File(mapperCfgPath), MapperConfig.class);
-        return;
+    public static NewsConfig getNewsConfig() {
+        return newsConfig;
     }
-
 
     public static List<Article> getAllArticles() throws Exception {
         var articles = new ArrayList<Article>();
@@ -54,13 +54,6 @@ public class BingNewsService {
         return null;
     }
 
-    public static List<TopNews> getAllTopNews() {
-        var mapper = topNewsAPIConfig.getMapper();
-        var topNewsesFromAPI = ReaderService.getTopNewsesFromAPIConfig(topNewsAPIConfig);
-        var mappedTopNews = MapperService.mapTopNews(topNewsFromAPI, mapper);
-        return topNewses;
-    }
-
     public static List<Article> getTrendingNews() {
         return null;
     }
@@ -78,18 +71,31 @@ public class BingNewsService {
         return null;
     }
 
-    public static SportInfo getSportsInfo() {
-        return null;
-    }
+//    public static void getSportsInfo() throws Exception {
+//        var mappedMatchResults = new ArrayList<MatchResult>();
+//        List<JSONObject> jsonMatchResults = ReaderService.getMatchResultFromAPIUrl("abc.com");
+//        mappedMatchResults = MapperService.mapJsonMatchResultsToMatchResults(jsonMatchResults);
+//        return mappedMatchResults;
+//    }
+
+    Node node;
 
     public static Feed getFeed365() {
         return null;
     }
 
-    public static void readTopNewsAPIConfig(String cfgPath) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        topNewsAPIConfig = objectMapper.readValue(new File(cfgPath), TopNewsConfig.class);
-        return;
+    public static List<Article> getTopNews() throws Exception {
+        var topNews = new ArrayList<Article>();
+        var endpoints = endpointConfig.getEndpoints();
+        for (var endpoint : endpoints){
+            var uri = endpoint.getURI();
+            var mapper = endpoint.getMapper();
+            var items = ReaderService.getNewsJsonFromAPI(uri, endpoint.getResponseKey());
+            var mappedItems = MapperService.mapJsonNewsToArticles(items, mapper);
+            topNews.addAll(mappedItems);
+        }
+
+        return topNews;
     }
 }
 

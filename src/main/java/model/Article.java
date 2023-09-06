@@ -1,11 +1,9 @@
 package model;
 
-import java.util.Date;
-
 public class Article {
     String title;
     String imgUrl;
-    String channel;
+    String channelId;
     String pubDate;
 
     public String getGuid() {
@@ -33,12 +31,12 @@ public class Article {
         this.imgUrl = imgUrl;
     }
 
-    public String getChannel() {
-        return channel;
+    public String getChannelId() {
+        return channelId;
     }
 
-    public void setChannel(String channel) {
-        this.channel = channel;
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
     }
 
     public String getPubDate() {

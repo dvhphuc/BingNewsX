@@ -1,0 +1,25 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(¨Œ¤â8õé¦¦1
+]	java:S125 "<This block of commented-out lines of code should be removed.(êüÿÿÿÿ8äÑ’¦¦1
+L	java:S106""+Replace this use of System.out by a logger.(Å­Ëİúÿÿÿÿ8öé¦¦1
+R
+java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8öé¦¦1
+M
+java:S1128"1Remove this unused import 'org.json.JSONTokener'.(øèê28÷é¦¦1
+M
+java:S1128"0Remove this unused import 'org.w3c.dom.Element'.(øÊÎ8÷é¦¦1
+O
+java:S1128"-Remove this unused import 'org.w3c.dom.Node'.(ùŠÿËıÿÿÿÿ8÷é¦¦1
+Q
+java:S1128"4Remove this unused import 'service.BingNewsService'.(°«óÅ8÷é¦¦1
+F
+java:S1128
+")Remove this unused import 'java.net.URI'.(Ö¦¨°8÷é¦¦1
+K
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8÷é¦¦1
+W
+java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8÷é¦¦1
+X
+java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8÷é¦¦1
+Y
+java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8øé¦¦1

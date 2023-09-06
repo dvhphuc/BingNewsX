@@ -1,21 +1,16 @@
 package service;
 
 import configuration.MapperConfig;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 
 import model.Article;
-import org.w3c.dom.Document;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 
-import java.io.StringReader;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class MapperService {
     public MapperService() {
@@ -49,8 +44,6 @@ public class MapperService {
         for (var source : mapper.keySet()) {
             var destination = mapper.get(source);
             var content = getFieldValue(item, destination);
-            // set property destination of article
-            // if want to set "title", call method "setTitle"
             String setMethod = "set" + source.substring(0, 1).toUpperCase() + source.substring(1);
             Method method = Article.class.getMethod(setMethod, String.class);
             method.invoke(article, content);
@@ -68,5 +61,53 @@ public class MapperService {
             articles.add(atc);
         }
         return articles;
+    }
+
+    //Generic for mapping
+    public static Article mapToTopNews(JSONObject jsonNews, HashMap<String, String> mapper) throws Exception {
+        var topNews = new Article();
+        for (var source : mapper.keySet()) {
+            var destination = mapper.get(source);
+            var content = jsonNews.getString(destination);
+            String setMethod = "set" + source.substring(0, 1).toUpperCase() + source.substring(1);
+            Method method = Article.class.getMethod(setMethod, String.class);
+            method.invoke(topNews, content);
+        }
+        return topNews;
+    }
+
+    public static List<Article> mapJsonNewsToArticles(JSONArray jsonNews, HashMap<String, String> mapper) throws Exception {
+        var topNews = new ArrayList<Article>();
+        for (int i = 0; i < jsonNews.length(); ++i) {
+            var jsonArticle = jsonNews.getJSONObject(i);
+            var atc =  mapToTopNews(jsonArticle, mapper);
+            topNews.add(atc);
+        }
+        return topNews;
+    }
+    private static final HashMap<Class<?> , String> fieldOfClass = new HashMap<>();
+
+    static void putDestinationField(Class<?> cls, String field) {
+        fieldOfClass.put(cls, field);
+    }
+    public static <T> String getContentOfItem(T item, String destination) {
+        for (var cls : fieldOfClass.keySet()) {
+            if (item.getClass() == cls) {
+                var fieldReturnedByFunction = fieldOfClass.get(cls);
+                return fieldReturnedByFunction;
+            }
+        }
+        return "";
+    }
+    public static <T> Article mapItemToArticle(T item, HashMap<String, String> mapper) throws Exception {
+        var article = new Article();
+        for (var source : mapper.keySet()) {
+            var destination = mapper.get(source);
+            String content = getContentOfItem(item, destination);
+            String setMethod = "set" + source.substring(0, 1).toUpperCase() + source.substring(1);
+            Method method = Article.class.getMethod(setMethod, String.class);
+            method.invoke(article, content);
+        }
+        return article;
     }
 }

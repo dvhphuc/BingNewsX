@@ -1,0 +1,26 @@
+{
+  "endpoints": [
+    {
+      "uri": "https://newsdata.io/api/1/news?country=vi&apikey=pub_2754268810ac4a75101d351556c0101c03c41",
+      "responseKey": "results",
+      "mapper": {
+        "guid" : "article_id",
+        "title": "title",
+        "sourceLink": "link",
+        "pubDate": "pubDate",
+        "channelId" : "source_id"
+      }
+    },
+    {
+      "uri": "https://newsdata.io/api/1/news?country=us&apikey=pub_2754268810ac4a75101d351556c0101c03c41",
+      "responseKey": "results",
+      "mapper": {
+        "guid" : "article_id",
+        "title": "title",
+        "sourceLink": "link",
+        "pubDate": "pubDate",
+        "channelId" : "source_id"
+      }
+    }
+  ]
+}
