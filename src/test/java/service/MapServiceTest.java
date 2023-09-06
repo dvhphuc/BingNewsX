@@ -3,10 +3,12 @@ package service;
 import configuration.EndpointConfig;
 import configuration.MapperConfig;
 import configuration.NewsConfig;
+import configuration.SportAPIsConfig;
 import org.junit.jupiter.api.Test;
 import com.sun.org.apache.xerces.internal.dom.DeferredElementImpl;
 import org.junit.platform.engine.support.descriptor.FileSystemSource;
 import org.w3c.dom.Node;
+import service.mapper.JsonMapperService;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,25 +32,22 @@ class MapServiceTest {
         System.out.println(article.getTitle());
     }
 
-    @Test
-    void mapItemToArticle() throws Exception {
-        BingNewsService.newsConfig = BingNewsService
-                .readConfig("src/main/resources/bingnewsconfig.json", NewsConfig.class);
-        BingNewsService.mapperConfig = BingNewsService
-                .readConfig("src/main/resources/rssmapperconfig.json", MapperConfig.class);
-        BingNewsService.endpointConfig = BingNewsService
-                .readConfig("src/main/resources/endpointTopNewsConfig.json", EndpointConfig.class);
-        var items = ReaderService.getRssItems("https://www.vnexpress.net/rss/tin-moi-nhat.rss");
-        var mapper = BingNewsService.mapperConfig.getChannels().get(0).getMapperConfig();
-        var item = items.item(0);
-        System.out.println(item.getClass().getInterfaces().getClass().getName());
-        //System.out.println(com.sun.org.apache.xerces.internal.dom.DeferredElementImpl.class);
-        var mappedItem = MapService.mapItemToArticle(item, mapper);
-        System.out.println(mappedItem.getTitle());
-        //System.out.println(item.getClass());
-    }
 
     @Test
     void mapItemsToArticles() {
+    }
+
+    @Test
+    void mapJsonMatchResultToMatchResult() throws Exception {
+        BingNewsService.sportConfig = BingNewsService
+                    .readConfig("src/main/resources/sportConfig.json", SportAPIsConfig.class);
+        var sportAPI = BingNewsService.sportConfig.getSportapis().get(0);
+        var matchResults = ReaderService.getMatchResultFromAPI(sportAPI);
+        var matchResult = matchResults.getJSONObject(0);
+
+        var mapService = new JsonMapperService();
+        var mappedMatchResult = mapService.mapJsonResultToMatchResult(matchResult, sportAPI.getMapper());
+
+        System.out.println(mappedMatchResult.getAwayScore());
     }
 }

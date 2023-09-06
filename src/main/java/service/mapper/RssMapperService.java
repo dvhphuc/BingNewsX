@@ -14,9 +14,8 @@ public class RssMapperService implements IMapper {
 
     @Override
     public <T> String getFieldValue(T item, String destination) throws Exception {
-        if (!(item instanceof Node))
-            throw new Exception("Wrong type of item, must be Node");
-        var nodeItem = (Node) item;
+        if (!(item instanceof Node nodeItem))
+            throw new IllegalArgumentException("Wrong type of item, must be Node");
 
         var attributeOfLastTag = "";
         if (destination.contains("#")) {
@@ -38,33 +37,38 @@ public class RssMapperService implements IMapper {
             return ((Element) nodeItem).getAttribute(attributeOfLastTag);
         return nodeItem.getTextContent();
     }
+
     @Override
     public <T> Article mapItemToArticle(T item, HashMap<String, String> mapper) throws Exception {
-        if (!(item instanceof Node))
-            throw new Exception("Wrong type of item, must be Node");
+        if (!(item instanceof Node nodeItem))
+            throw new IllegalArgumentException("Wrong type of item, must be Node");
+
         var article = new Article();
-        var nodeItem = (Node) item;
-        for (var soucre : mapper.keySet()) {
-            var destination = mapper.get(soucre);
+
+        for (var entry : mapper.entrySet()) {
+            var source = entry.getKey();
+            var destination = entry.getValue();
             var content = getFieldValue(nodeItem, destination);
-            var setMethod = "set" + soucre.substring(0, 1).toUpperCase() + soucre.substring(1);
+            var setMethod = "set" + source.substring(0, 1).toUpperCase() + source.substring(1);
             var method = Article.class.getMethod(setMethod, String.class);
             method.invoke(article, content);
         }
+
         return article;
     }
 
     @Override
     public <T> List<Article> mapItemsToArticles(T items, HashMap<String, String> mapper) throws Exception {
-        if (!(items instanceof NodeList))
-            throw new Exception("Wrong type of item, must be Node");
+        if (!(items instanceof NodeList itemsNodeList))
+            throw new IllegalArgumentException("Wrong type of item, must be NodeList");
 
         var articles = new ArrayList<Article>();
-        NodeList itemsNodeList = (NodeList) items;
+
         for (int i = 0; i < itemsNodeList.getLength(); ++i) {
             var article = mapItemToArticle(itemsNodeList.item(i), mapper);
             articles.add(article);
         }
+
         return articles;
     }
 }

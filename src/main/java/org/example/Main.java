@@ -26,12 +26,22 @@ public class Main {
 //        var financeInfo = BingNewsService.getFinanceInfo();
 //        var sportsInfo = BingNewsService.getSportsInfo();
 
-        var a = ReaderService.getMatchResultFromAPI();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api-football-beta.p.rapidapi.com/fixtures?date=2020-02-06"))
+                .header("X-RapidAPI-Key", "65e4f82b53msh001c94c3de4e044p16cf4fjsna8cbb2957755")
+                .header("X-RapidAPI-Host", "api-football-beta.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
 
-        for (int i=1; i<a.length(); i++) {
-            //System.out.println(a.getJSONObject(i));
-            var s = a.getJSONObject(i).getJSONObject("teams").getJSONObject("home").getString("name");
-            System.out.println(s);
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        var jsonObject = new JSONObject(response.body());
+        var fixtures = jsonObject.getJSONArray("response");
+
+        for (var i = 0; i<fixtures.length(); ++i) {
+            var match = fixtures.getJSONObject(i);
+            var result = match.getJSONObject("teams").getJSONObject("home").getString("name");
+            System.out.println(result);
         }
     }
 

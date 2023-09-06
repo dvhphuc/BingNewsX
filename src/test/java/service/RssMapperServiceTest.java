@@ -29,10 +29,14 @@ class RssMapperServiceTest {
                 .readConfig("src/main/resources/bingnewsconfig.json", NewsConfig.class);
         BingNewsService.mapperConfig = BingNewsService
                 .readConfig("src/main/resources/rssmapperconfig.json", MapperConfig.class);
+
         var items = ReaderService.getRssItems("https://vnexpress.net/rss/tin-moi-nhat.rss");
         var mapper = BingNewsService.mapperConfig.getChannels().get(0).getMapperConfig();
+
         var item = items.item(0);
+
         var rssMapperService = new RssMapperService();
+
         var mappedItem = rssMapperService.mapItemToArticle(item, mapper);
 
         System.out.println(mappedItem.getTitle());
