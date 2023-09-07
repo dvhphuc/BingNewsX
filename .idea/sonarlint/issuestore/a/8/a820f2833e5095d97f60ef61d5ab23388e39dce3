@@ -1,17 +1,20 @@
 
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ş«˜¤ıÿÿÿÿ8ÄŒÊ¦1
-g	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(’ÎÓ¬ıÿÿÿÿ8ÿØÊ¦1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öò¯üÿÿÿÿ8ÄŒÊ¦1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¸”Œ©şÿÿÿÿ8¢½ĞÚ¦1
 £
-java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§â·¹ıÿÿÿÿ8ÔŒÊ¦1
-?
-java:S1118"Hide this public constructor.(öò¯üÿÿÿÿ8ÔŒÊ¦1
+java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§â·¹ıÿÿÿÿ8Â½ĞÚ¦1
+H
+java:S11686"+Return an empty collection instead of null.(¥¹ï8—¾ĞÚ¦1
+]	java:S1253"<This block of commented-out lines of code should be removed.(çêşëùÿÿÿÿ8™¾ĞÚ¦1
+H
+java:S1168:"+Return an empty collection instead of null.(¥¹ï8›¾ĞÚ¦1
+X	java:S125J"<This block of commented-out lines of code should be removed.(Æøú¤8¾ĞÚ¦1
+R
+java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8¢¾ĞÚ¦1
 F
-java:S3010"*Remove this assignment of "mapperService".(õçş'8ÔŒÊ¦1
-Q
-java:S2209"5Change this instance-reference to a static reference.(õçş'8ÔŒÊ¦1
-H
-java:S1168>"+Return an empty collection instead of null.(¥¹ï8óŒÊ¦1
-]	java:S125;"<This block of commented-out lines of code should be removed.(çêşëùÿÿÿÿ8óŒÊ¦1
-H
-java:S1168B"+Return an empty collection instead of null.(¥¹ï8óŒÊ¦1
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8¢¾ĞÚ¦1
+W
+java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8£¾ĞÚ¦1
+X
+java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8£¾ĞÚ¦1
+Y
+java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8£¾ĞÚ¦1

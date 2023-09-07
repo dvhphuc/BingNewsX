@@ -4,23 +4,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import configuration.*;
 import model.AdTopic;
 import model.Article;
-import service.mapper.IMapper;
+import org.json.JSONObject;
+import org.w3c.dom.Node;
 
 import java.io.File;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
-//nhieu service con
-public class BingNewsService {
-    private static IMapper mapperService;
-    public BingNewsService(IMapper _mapperService) {
-        this.mapperService = _mapperService;
-    }
-    static NewsConfig newsConfig;
-    static MapperConfig mapperConfig;
-    static EndpointConfig endpointConfig;
-    static SportAPIsConfig sportConfig;
 
-    public static <T> T readConfig(String configPath, Class<T> configClass) throws Exception { //Refactor
+public class BingNewsService {
+    public static NewsConfig newsConfig;
+    public static MapperConfig mapperConfig;
+    public static EndpointConfig endpointConfig;
+
+    public static <T> T readConfig(String configPath, Class<T> configClass) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(new File(configPath), configClass);
     }
@@ -38,8 +38,8 @@ public class BingNewsService {
                 var channelId = RssInfo.getChannelID();
                 var rssUrl = RssInfo.getURL();
                 var items = ReaderService.getRssItems(rssUrl);
-                var mapper = mapperConfig.getChannelById(channelId).getMapperConfig();
-                var mappedItems = mapperService.mapItemsToArticles(items, mapper);
+                var mappedItems = MapperService.mapItemsToArticles(items, mapperConfig, channelId);
+
                 articles.addAll(mappedItems);
             }
         }
@@ -71,9 +71,14 @@ public class BingNewsService {
         return null;
     }
 
-    public static SportInfo getSportsInfo() throws Exception {
-        return null;
-    }
+//    public static void getSportsInfo() throws Exception {
+//        var mappedMatchResults = new ArrayList<MatchResult>();
+//        List<JSONObject> jsonMatchResults = ReaderService.getMatchResultFromAPIUrl("abc.com");
+//        mappedMatchResults = MapperService.mapJsonMatchResultsToMatchResults(jsonMatchResults);
+//        return mappedMatchResults;
+//    }
+
+    Node node;
 
     public static Feed getFeed365() {
         return null;
@@ -86,7 +91,7 @@ public class BingNewsService {
             var uri = endpoint.getURI();
             var mapper = endpoint.getMapper();
             var items = ReaderService.getNewsJsonFromAPI(uri, endpoint.getResponseKey());
-            var mappedItems = mapperService.mapItemsToArticles(items, mapper);
+            var mappedItems = MapperService.mapJsonNewsToArticles(items, mapper);
             topNews.addAll(mappedItems);
         }
 

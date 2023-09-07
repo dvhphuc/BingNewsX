@@ -1,7 +1,7 @@
 package service;
 
 import org.junit.jupiter.api.Test;
-import service.mapper.JsonMapperService;
+import service.mapper.JsonMapperObjectToArticleService;
 
 class JsonMapperServiceTest {
 
@@ -19,7 +19,7 @@ class JsonMapperServiceTest {
 
         var item = items.getJSONObject(0);
         var field = "title";
-        var jsonMapperService = new JsonMapperService();
+        var jsonMapperService = new JsonMapperObjectToArticleService();
         var value = jsonMapperService.getFieldValue(item, field);
 
         assert (value != null);
@@ -40,7 +40,7 @@ class JsonMapperServiceTest {
 
         var item = items.getJSONObject(0);
         var mapper = BingNewsService.endpointConfig.getEndpoints().get(0).getMapper();
-        var jsonMapperService = new JsonMapperService();
+        var jsonMapperService = new JsonMapperObjectToArticleService();
         var mappedItem = jsonMapperService.mapItemToArticle(item, mapper);
 
         assert (mappedItem != null);
@@ -61,7 +61,7 @@ class JsonMapperServiceTest {
 
         var mapper = BingNewsService.endpointConfig.getEndpoints().get(0).getMapper();
 
-        var jsonMapperService = new JsonMapperService();
+        var jsonMapperService = new JsonMapperObjectToArticleService();
         var mappedItems = jsonMapperService.mapItemsToArticles(items, mapper);
 
         assert (mappedItems.size() > 0);

@@ -1,9 +1,0 @@
-
-
-java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ñ¾È’ûÿÿÿÿ8ÿæ×Í¦1
-„
-java:S1319"bThe type of "value" should be an interface such as "Map" rather than the implementation "HashMap".(¥µ×…úÿÿÿÿ8ÚçñÑ¦1
-Š
-java:S1319)"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(’Âó¦8ÿæ×Í¦1
-
-java:S1319+"bThe type of "value" should be an interface such as "Map" rather than the implementation "HashMap".(òôà°8³òÑ¦1

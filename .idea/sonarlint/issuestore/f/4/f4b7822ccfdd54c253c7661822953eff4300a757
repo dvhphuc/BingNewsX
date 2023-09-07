@@ -1,10 +1,0 @@
-
-b	java:S112	"FDefine and throw a dedicated exception instead of using a generic one.(å’öœ8–ê½Ä¦1
-b	java:S112
-"FDefine and throw a dedicated exception instead of using a generic one.(ğŒ¶ç8–ê½Ä¦1
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(»±ıúÿÿÿÿ8’ğ“Å¦1
-€
-java:S1319
-"cThe type of "mapper" should be an interface such as "Map" rather than the implementation "HashMap".(ğŒ¶ç8±œÎÄ¦1
-…
-java:S1319"cThe type of "mapper" should be an interface such as "Map" rather than the implementation "HashMap".(»±ıúÿÿÿÿ8ñÊÎÄ¦1

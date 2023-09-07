@@ -1,6 +1,5 @@
 
 X	java:S125"<This block of commented-out lines of code should be removed.(¨Œ¤â8¬ÔÿÊ¦1
-L	java:S106,"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8°ÔÿÊ¦1
 M
 java:S1128"1Remove this unused import 'org.json.JSONTokener'.(øèê28±ÔÿÊ¦1
 M
@@ -13,4 +12,3 @@ T
 java:S1128"2Remove this unused import 'service.ReaderService'.(‡çÕÿÿÿÿÿ8±ÔÿÊ¦1
 K
 java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8±ÔÿÊ¦1
-msecrets:S6700"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(‚ »‹8øù’Ê¦1

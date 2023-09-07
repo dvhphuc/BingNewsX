@@ -4,9 +4,8 @@ package service;
 import configuration.EndpointConfig;
 import configuration.MapperConfig;
 import configuration.NewsConfig;
-import configuration.SportAPI;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import service.mapper.RssMapperService;
 
 class BingNewsServiceTest {
 
@@ -30,14 +29,10 @@ class BingNewsServiceTest {
     void testGetAllArticles() throws Exception {
         String newsCfg = "src/main/resources/bingnewsconfig.json";
         String mapperCfg = "src/main/resources/rssmapperconfig.json";
+        //BingNewsService.newsConfig = BingNewsService.readConfig(newsCfg, NewsConfig.class);
+        //BingNewsService.mapperConfig = BingNewsService.readConfig(mapperCfg, MapperConfig.class);
 
-        BingNewsService.newsConfig = BingNewsService.readConfig(newsCfg, NewsConfig.class);
-        BingNewsService.mapperConfig = BingNewsService.readConfig(mapperCfg, MapperConfig.class);
-
-        var rssMapperService = new RssMapperService();
-        var bingNewsService = new BingNewsService(rssMapperService);
-
-        var articles = bingNewsService.getAllArticles();
+        var articles = BingNewsService.getAllArticles();
 
         assert (articles.size() > 0);
     }
@@ -56,17 +51,13 @@ class BingNewsServiceTest {
 //    }
 
     @Test
-    void testGetTopNews() throws Exception {
-        String endpointTopNewsAPICfg = "src/main/resources/endpointTopNewsConfig.json";
+    void testGetAllTopNews() throws Exception {
+        //BingNewsService.endpointConfig =
+        //        BingNewsService.readConfig("src/main/resources/endpointTopNewsConfig.json", EndpointConfig.class);
+        var topNewses = BingNewsService.getTopNews();
+        topNewses.forEach(article -> System.out.println(article.getTitle()));
+        assert (topNewses.size() > 0);
 
-        BingNewsService.endpointConfig = BingNewsService.readConfig(endpointTopNewsAPICfg, EndpointConfig.class);
-
-        var jsonMapperService = new service.mapper.JsonMapperService();
-        var bingNewsService = new BingNewsService(jsonMapperService);
-
-        var articles = bingNewsService.getTopNews();
-
-        assert (articles.size() > 0);
     }
 
     @Test
@@ -80,16 +71,6 @@ class BingNewsServiceTest {
         var weatherInfo = BingNewsService.getWeatherInfo();
         assert (weatherInfo != null);
     }
-
-//    @Test
-//    void getSportInfo() throws Exception {
-//        BingNewsService.sportConfig = BingNewsService
-//                    .readConfig("src/main/resources/sportAPIConfig.json", SportAPI.class);
-//
-//        var bingNewsService = new BingNewsService(new service.mapper.JsonMapperService());
-//        //var sportInfo = bingNewsService.
-//        //assert (sportInfo != null);
-//    }
 
     @Test
     void getFinanceInfo() {

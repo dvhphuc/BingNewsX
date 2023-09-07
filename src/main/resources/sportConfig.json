@@ -2,24 +2,23 @@
     "sportapis":
       [
         {
-          "name" : "RapidAPI",
-          "uri" : "https://api-football-beta.p.rapidapi.com/fixtures?date=2020-02-06",
-          "header": {
-              "X-RapidAPI-Host" : "api-football-beta.p.rapidapi.com",
-              "X-RapidAPI-Key" : "65e4f82b53msh001c94c3de4e044p16cf4fjsna8cbb2957755"
-                    },
-          "method" : "GET",
-          "responseKey" : "response",
+          "name" : "apifootball",
+          "url" : "https://apiv3.apifootball.com/",
+          "apiKey" : "817hr30juyhj",
+          "responseKey" : "match",
           "mapper": {
-            "league" : "league.name",
-            "leagueLogo" : "league.logo",
-            "homeTeam" : "teams.home.name",
-            "homeLogo" : "teams.home.logo",
-            "awayTeam" : "teams.away.name",
-            "awayLogo" : "teams.away.logo",
-            "homeScore" : "score.fulltime.home",
-            "awayScore" : "score.fulltime.away"
+            "league" : "league_name",
+            "homeTeam" : "match_hometeam_name",
+            "awayTeam" : "match_awayteam_name",
+            "homeScore" : "match_hometeam_score",
+            "awayScore" : "match_awayteam_score"
           }
+        },
+        {
+
+        },
+        {
+
         }
       ]
 }

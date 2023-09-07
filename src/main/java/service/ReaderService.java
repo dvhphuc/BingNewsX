@@ -1,6 +1,6 @@
 package service;
 
-import configuration.SportAPI;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
@@ -32,22 +32,17 @@ public class ReaderService {
         return new JSONObject(responseString).getJSONArray(responseKey);
     }
 
-    public static JSONArray getMatchResultFromAPI(SportAPI sportAPI) throws Exception {
-        var uri = sportAPI.getURI();
-        var rapidAPIHost = sportAPI.getRapidHost();
-        var rapidAPIKey = sportAPI.getRapidKey();
-        var method = sportAPI.getMethod(); //GET, PUT, POST,...
-        var responseKey = sportAPI.getResponseKey();
-
-        var req = HttpRequest.newBuilder()
-                .uri(URI.create(uri))
-                .header(rapidAPIKey.getKey(), rapidAPIKey.getValue())
-                .header(rapidAPIHost.getKey(), rapidAPIHost.getValue())
-                .method(method, HttpRequest.BodyPublishers.noBody())
+    public static JSONArray getMatchResultFromAPI() throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api-football-beta.p.rapidapi.com/fixtures?date=2023-02-06"))
+                .header("X-RapidAPI-Key", "65e4f82b53msh001c94c3de4e044p16cf4fjsna8cbb2957755")
+                .header("X-RapidAPI-Host", "api-football-beta.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        //System.out.println(response.body());
 
-        HttpResponse<String> res = HttpClient.newHttpClient().send(req, HttpResponse.BodyHandlers.ofString());
-
-        return new JSONObject(res.body()).getJSONArray(responseKey);
+        return new JSONObject(response.body()).getJSONArray("response");
     }
+
 }

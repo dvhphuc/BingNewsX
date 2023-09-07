@@ -1,0 +1,16 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª”²¦1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª”²¦1
+a	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Î‰ÿ=8ãÂÊ²¦1
+K
+java:S37406"/Provide the parametrized type for this generic.(É·çp8Ÿª”²¦1
+…
+java:S1319)"cThe type of "mapper" should be an interface such as "Map" rather than the implementation "HashMap".(ÙÉ´òüÿÿÿÿ8Ÿª”²¦1
+€
+java:S13195"cThe type of "mapper" should be an interface such as "Map" rather than the implementation "HashMap".(È“ğş8Ÿª”²¦1
+k
+java:S3973%"IUse indentation to denote the code conditionally executed by this "else".(„¶áìøÿÿÿÿ8ÒÈ‹Ã¦1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ÕàãŸ8¨ª”²¦1
+Q
+java:S2864+"4Iterate over the "entrySet" instead of the "keySet".(¼ƒÆ8¬ª”²¦1
