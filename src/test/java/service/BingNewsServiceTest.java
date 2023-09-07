@@ -27,7 +27,6 @@ class BingNewsServiceTest {
 
     @Test
     void testGetAllArticles() throws Exception {
-        BingNewsService bingNewsService = new BingNewsService();
         BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
                 configuration.NewsConfig.class);
         BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
@@ -36,7 +35,7 @@ class BingNewsServiceTest {
         var articles = BingNewsService.getAllArticles();
 
         System.out.println(articles.get(0).getTitle());
-        assert (articles!=null);
+        assert (articles.size() > 0);
     }
 
     @Test

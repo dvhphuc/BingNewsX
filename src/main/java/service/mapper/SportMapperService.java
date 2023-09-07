@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import service.mapper.gettetpropvalue.IGetPropertyValue;
 import service.mapper.gettetpropvalue.JsonValueGetter;
+import service.mapper.listconverter.ConverterFactory;
 import service.mapper.listconverter.IListConvert;
 import service.mapper.listconverter.JSONArrayConverter;
 
@@ -34,8 +35,8 @@ public class SportMapperService implements IModelMapper<MatchResult> {
 
     @Override
     public <T> List<MatchResult> mapObjects(T objects, HashMap<String, String> mapper) throws Exception {
-        IListConvert<JSONArray> converter = new JSONArrayConverter();
-        List<JSONObject> convertedList = converter.convert((JSONArray) objects);
+        IListConvert<T> converter = new ConverterFactory<T>() {}.create(objects);
+        List<JSONObject> convertedList = converter.convert(objects);
         var result = new ArrayList<MatchResult>();
         for (var object : convertedList) {
             result.add(mapObject(object, mapper));

@@ -41,6 +41,7 @@ class SportMapperServiceTest {
 
         var mappedMatchResults = sportMapperService.mapObjects(matchResultsJson, mapper);
 
+        System.out.println(mappedMatchResults.get(0).getHomeTeam() + " vs " + mappedMatchResults.get(0).getAwayTeam());
         assert(mappedMatchResults.size() > 0);
     }
 

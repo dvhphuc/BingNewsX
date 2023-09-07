@@ -42,16 +42,7 @@ public class ArticleMapperService implements IModelMapper<Article> {
     // Type of objects must be JSONArray or NodeList,... (multiple objects need to wrap in a list)
     public <T> List<Article> mapObjects(T objects, HashMap<String, String> mapper) throws Exception {
         var articles = new ArrayList<Article>();
-
-//        IListConvert converter;
-//        if (objects instanceof JSONArray) {
-//            converter = new JSONArrayConverter<T>();
-//        } else if (objects instanceof NodeList) {
-//            converter = new NodeListConverter();
-//        } else {
-//            throw new Exception("Invalid object type");
-//        }
-        IListConvert<T> converter = new ConverterFactory<T>() {}.create(objects);
+        IListConvert<T> converter = new ConverterFactory<T>() {}.create(objects); // Use factory to create a converter
         List<Object> convertedObjects = converter.convert(objects);
         for (Object object : convertedObjects) {
             articles.add(mapObject(object, mapper));

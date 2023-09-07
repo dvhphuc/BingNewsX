@@ -1,20 +1,11 @@
 package service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import configuration.*;
 import model.AdTopic;
 import model.Article;
-import org.json.JSONObject;
 import org.w3c.dom.Node;
 import service.mapper.ArticleMapperService;
-import service.mapper.IModelMapper;
 import service.mapper.SportMapperService;
-
-import java.io.File;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,7 +95,7 @@ public class BingNewsService {
             var uri = endpoint.getURI();
             var mapper = endpoint.getMapper();
             var items = ReaderService.getNewsJsonFromAPI(uri, endpoint.getResponseKey());
-            var mappedItems = MapperService.mapJsonNewsToArticles(items, mapper);
+            var mappedItems = new ArticleMapperService().mapObjects(items, mapper);
             topNews.addAll(mappedItems);
         }
 
