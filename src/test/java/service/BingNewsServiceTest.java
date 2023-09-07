@@ -69,6 +69,17 @@ class BingNewsServiceTest {
     }
 
     @Test
+    void getSportInfo() throws Exception {
+        BingNewsService.sportConfig = ReaderService.readConfig("src/main/resources/sportconfig.json",
+                configuration.SportConfig.class);
+
+        var sportInfo = BingNewsService.getSportInfo();
+        for (var result : sportInfo) {
+            System.out.println(result.getHomeTeam() + " " + result.getHomeScore() + " - " + result.getAwayScore() + " " + result.getAwayTeam());
+        }
+        assert (sportInfo.size() > 0);
+    }
+    @Test
     void getWeatherInfo() {
         var weatherInfo = BingNewsService.getWeatherInfo();
         assert (weatherInfo != null);

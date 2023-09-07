@@ -1,0 +1,13 @@
+
+b	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(‚ô„8µ†¥ı¦1
+b	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(‚ô„8¶†¥ı¦1
+Q
+java:S3740;"/Provide the parametrized type for this generic.(‹Â›Éÿÿÿÿÿ8·†¥ı¦1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(­Ÿ¸¸8Å†¥ı¦1
+
+java:S1450"_Remove the "propValueService" field and declare it as a local variable in the relevant methods.(Ó«âÉÿÿÿÿÿ8Ç†¥ı¦1
+p
+java:S6201"NReplace this instanceof check and cast with 'instanceof JSONObject jsonobject'(—³®Çùÿÿÿÿ8Ê†¥ı¦1
+^
+java:S6201"BReplace this instanceof check and cast with 'instanceof Node node'(ë¸™d8Ë†¥ı¦1

@@ -1,9 +1,0 @@
-
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ý“¾üýÿÿÿÿ8¾¢£í¦1
-g	java:S112'"FDefine and throw a dedicated exception instead of using a generic one.(ý“¾üýÿÿÿÿ8¿¢£í¦1
-V
-java:S2864"4Iterate over the "entrySet" instead of the "keySet".(ºÍ±­ûÿÿÿÿ8Í¢£í¦1
-d
-java:S1854*"BRemove this useless assignment to local variable "jsonArrayItems".(†§Þ·ùÿÿÿÿ8Î¢£í¦1
-U
-java:S1481*"3Remove this unused "jsonArrayItems" local variable.(†§Þ·ùÿÿÿÿ8Ï¢£í¦1

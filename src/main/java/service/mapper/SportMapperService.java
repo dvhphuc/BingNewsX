@@ -3,10 +3,11 @@ package service.mapper;
 import configuration.MatchResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import service.mapper.gettetpropvalue.IGetPropertyValue;
+import service.mapper.gettetpropvalue.JsonValueGetter;
 import service.mapper.listconverter.IListConvert;
 import service.mapper.listconverter.JSONArrayConverter;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,11 +34,8 @@ public class SportMapperService implements IModelMapper<MatchResult> {
 
     @Override
     public <T> List<MatchResult> mapObjects(T objects, HashMap<String, String> mapper) throws Exception {
-        if (!(objects instanceof JSONArray))
-            throw new Exception("Invalid object type");
-        JSONArray jsonArray = (JSONArray) objects;
-        converter = new JSONArrayConverter();
-        List<JSONObject> convertedList = converter.convert(jsonArray);
+        IListConvert<JSONArray> converter = new JSONArrayConverter();
+        List<JSONObject> convertedList = converter.convert((JSONArray) objects);
         var result = new ArrayList<MatchResult>();
         for (var object : convertedList) {
             result.add(mapObject(object, mapper));

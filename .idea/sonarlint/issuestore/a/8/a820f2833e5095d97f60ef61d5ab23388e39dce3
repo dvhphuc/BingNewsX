@@ -1,20 +1,44 @@
 
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¸”Œ©şÿÿÿÿ8¢½ĞÚ¦1
-£
-java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§â·¹ıÿÿÿÿ8Â½ĞÚ¦1
-H
-java:S11686"+Return an empty collection instead of null.(¥¹ï8—¾ĞÚ¦1
-]	java:S1253"<This block of commented-out lines of code should be removed.(çêşëùÿÿÿÿ8™¾ĞÚ¦1
-H
-java:S1168:"+Return an empty collection instead of null.(¥¹ï8›¾ĞÚ¦1
-X	java:S125J"<This block of commented-out lines of code should be removed.(Æøú¤8¾ĞÚ¦1
+x
+java:S1104"VMake newsConfig a static final constant or non-public and provide accessors if needed.(ìù×¡ıÿÿÿÿ8ºÒ­ø¦1
+z
+java:S1104"XMake mapperConfig a static final constant or non-public and provide accessors if needed.(ô£üÿÿÿÿ8ºÒ­ø¦1
+w
+java:S1104"ZMake endpointConfig a static final constant or non-public and provide accessors if needed.(àúÚ¡8ºÒ­ø¦1
+t
+java:S1104"WMake sportConfig a static final constant or non-public and provide accessors if needed.(Í©¸8ºÒ­ø¦1
 R
-java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8¢¾ĞÚ¦1
+java:S1444"0Make this "public static newsConfig" field final(ìù×¡ıÿÿÿÿ8ºÒ­ø¦1
+T
+java:S1444"2Make this "public static mapperConfig" field final(ô£üÿÿÿÿ8ºÒ­ø¦1
+Q
+java:S1444"4Make this "public static endpointConfig" field final(àúÚ¡8ºÒ­ø¦1
+N
+java:S1444"1Make this "public static sportConfig" field final(Í©¸8ºÒ­ø¦1
+£
+java:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§â·¹ıÿÿÿÿ8ºÒ­ø¦1
+H
+java:S11689"+Return an empty collection instead of null.(¥¹ï8ÉÒ­ø¦1
+]	java:S1256"<This block of commented-out lines of code should be removed.(çêşëùÿÿÿÿ8ÉÒ­ø¦1
+H
+java:S1168="+Return an empty collection instead of null.(¥¹ï8ÉÒ­ø¦1
+X	java:S125W"<This block of commented-out lines of code should be removed.(Æøú¤8ÉÒ­ø¦1
+e
+java:S1128"HRemove this unused import 'com.fasterxml.jackson.databind.ObjectMapper'.(´‘¨™8­ï²ø¦1
+R
+java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8­ï²ø¦1
+Z
+java:S1128
+"8Remove this unused import 'service.mapper.IModelMapper'.(‡‘¤”üÿÿÿÿ8­ï²ø¦1
 F
-java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8¢¾ĞÚ¦1
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8­ï²ø¦1
+F
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8­ï²ø¦1
 W
-java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8£¾ĞÚ¦1
+java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8­ï²ø¦1
 X
-java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8£¾ĞÚ¦1
+java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8­ï²ø¦1
 Y
-java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8£¾ĞÚ¦1
+java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8­ï²ø¦1
+L
+java:S1068"*Remove this unused "reader" private field.(ÁËšûÿÿÿÿ8ÉÒ­ø¦1

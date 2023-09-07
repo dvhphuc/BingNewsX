@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JSONArrayConverter implements IListConvert<JSONArray>{
+    public JSONArrayConverter() {
+    }
     @Override
     public List<JSONObject> convert(JSONArray objects) throws Exception {
         List<JSONObject> convertedList = new ArrayList<>();

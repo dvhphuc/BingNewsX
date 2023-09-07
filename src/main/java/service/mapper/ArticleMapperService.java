@@ -1,17 +1,13 @@
 package service.mapper;
 
 import model.Article;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import service.mapper.gettetpropvalue.GetterValueFactory;
+import service.mapper.gettetpropvalue.IGetPropertyValue;
+import service.mapper.listconverter.ConverterFactory;
 import service.mapper.listconverter.IListConvert;
-import service.mapper.listconverter.JSONArrayConverter;
-import service.mapper.listconverter.NodeListConverter;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,14 +19,7 @@ public class ArticleMapperService implements IModelMapper<Article> {
 
     @Override
     public <T> Article mapObject(T object, HashMap<String, String> mapper) throws Exception {
-
-        if (object instanceof JSONObject) {
-            propValueService = new JsonValueGetter((JSONObject) object);
-        } else if (object instanceof Node) {
-            propValueService = new RssValueGetter((Node) object);
-        } else {
-            throw new Exception("Invalid object type");
-        }
+        propValueService = new GetterValueFactory<T>() {}.create(object);
 
         Article article = new Article();
         for (var entry : mapper.entrySet()) {
@@ -54,15 +43,15 @@ public class ArticleMapperService implements IModelMapper<Article> {
     public <T> List<Article> mapObjects(T objects, HashMap<String, String> mapper) throws Exception {
         var articles = new ArrayList<Article>();
 
-        IListConvert converter;
-        if (objects instanceof JSONArray) {
-            converter = new JSONArrayConverter();
-        } else if (objects instanceof NodeList) {
-            converter = new NodeListConverter();
-        } else {
-            throw new Exception("Invalid object type");
-        }
-
+//        IListConvert converter;
+//        if (objects instanceof JSONArray) {
+//            converter = new JSONArrayConverter<T>();
+//        } else if (objects instanceof NodeList) {
+//            converter = new NodeListConverter();
+//        } else {
+//            throw new Exception("Invalid object type");
+//        }
+        IListConvert<T> converter = new ConverterFactory<T>() {}.create(objects);
         List<Object> convertedObjects = converter.convert(objects);
         for (Object object : convertedObjects) {
             articles.add(mapObject(object, mapper));

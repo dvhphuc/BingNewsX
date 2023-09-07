@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import org.w3c.dom.Node;
 import service.mapper.ArticleMapperService;
 import service.mapper.IModelMapper;
+import service.mapper.SportMapperService;
 
 import java.io.File;
 import java.net.URI;
@@ -64,6 +65,16 @@ public class BingNewsService {
 
     }
 
+    public static List<MatchResult> getSportInfo() throws Exception {
+        var sportInfo = new ArrayList<MatchResult>();
+        var sportMapper = new SportMapperService();
+        for (var sportApi : sportConfig.getSportapis()) {
+            var items = ReaderService.getMatchResultFromAPI(sportApi);
+            var mappedItems = sportMapper.mapObjects(items, sportApi.getMapper());
+            sportInfo.addAll(mappedItems);
+        }
+        return sportInfo;
+    }
     public static WeatherInfo getWeatherInfo() { //
         return null;
     }
