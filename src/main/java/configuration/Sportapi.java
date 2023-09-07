@@ -43,4 +43,29 @@ public class Sportapi {
     @JsonProperty("mapper")
     public void setMapper(HashMap<String, String> value) { this.mapper = value; }
 
+    public String getRapidHostKey() {
+        return header.entrySet()
+                .stream()
+                .filter(e -> e.getKey().equals("X-RapidAPI-Host"))
+                .findFirst()
+                .get()
+                .getValue();
+    }
+
+    public String getRapidHostValue() {
+        return header.get(getRapidHostKey());
+    }
+
+    public String getRapidKeyKey() {
+        return header.entrySet()
+                .stream()
+                .filter(e -> e.getKey().equals("X-RapidAPI-Key"))
+                .findFirst()
+                .get()
+                .getValue();
+    }
+
+    public String getRapidKeyValue() {
+        return header.get(getRapidKeyKey());
+    }
 }

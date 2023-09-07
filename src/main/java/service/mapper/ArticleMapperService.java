@@ -12,21 +12,21 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ArticleMapperService implements IModelMapper<Article> {
-    private IGetPropertyValue propValueService;
 
     public ArticleMapperService() {
     }
 
+    // propValueService is used to get value of a property of an object, ex: propValueService.getPropValue("title")
     @Override
     public <T> Article mapObject(T object, HashMap<String, String> mapper) throws Exception {
-        propValueService = new GetterValueFactory<T>() {}.create(object);
+        var getterPropValue = new GetterValueFactory<T>() {}.create(object);
 
         Article article = new Article();
         for (var entry : mapper.entrySet()) {
-            String source = entry.getKey();
-            String destination = entry.getValue();
+            String source = entry.getKey(); // title, link, ...
+            String destination = entry.getValue(); // title, source, img.url# ...
 
-            String content = propValueService.getPropValue(destination);
+            String content = getterPropValue.getPropValue(destination);
 
             Method setMethod = Article.class
                     .getMethod("set"
@@ -39,7 +39,8 @@ public class ArticleMapperService implements IModelMapper<Article> {
     }
 
     @Override
-    // Type of objects must be JSONArray or NodeList,... (multiple objects need to wrap in a list)
+    // Type of objects must be JSONArray or NodeList,... (multiple objects need to wrap into a list)
+    // Convertor will convert JSONArray to List<JSONObject> or NodeList to List<Node>,...
     public <T> List<Article> mapObjects(T objects, HashMap<String, String> mapper) throws Exception {
         var articles = new ArrayList<Article>();
         IListConvert<T> converter = new ConverterFactory<T>() {}.create(objects); // Use factory to create a converter
