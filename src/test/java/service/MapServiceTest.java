@@ -14,12 +14,13 @@ class MapServiceTest {
 
     @Test
     void getContentOfItem() throws Exception {
-        BingNewsService.newsConfig = BingNewsService
-                    .readConfig("src/main/resources/bingnewsconfig.json", NewsConfig.class);
-        BingNewsService.mapperConfig = BingNewsService
-                    .readConfig("src/main/resources/rssmapperconfig.json", MapperConfig.class);
-        BingNewsService.endpointConfig = BingNewsService
-                    .readConfig("src/main/resources/endpointTopNewsConfig.json", EndpointConfig.class);
+        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+                configuration.NewsConfig.class);
+        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
+                configuration.MapperConfig.class);
+        BingNewsService.endpointConfig = ReaderService.readConfig("src/main/resources/endpointTopNewsConfig.json",
+                configuration.EndpointConfig.class);
+
 
         //System.out.println(BingNewsService.getNewsConfig().getCategories().size());
 
@@ -32,12 +33,13 @@ class MapServiceTest {
 
     @Test
     void mapItemToArticle() throws Exception {
-        BingNewsService.newsConfig = BingNewsService
-                .readConfig("src/main/resources/bingnewsconfig.json", NewsConfig.class);
-        BingNewsService.mapperConfig = BingNewsService
-                .readConfig("src/main/resources/rssmapperconfig.json", MapperConfig.class);
-        BingNewsService.endpointConfig = BingNewsService
-                .readConfig("src/main/resources/endpointTopNewsConfig.json", EndpointConfig.class);
+        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+                configuration.NewsConfig.class);
+        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
+                configuration.MapperConfig.class);
+        BingNewsService.endpointConfig = ReaderService.readConfig("src/main/resources/endpointTopNewsConfig.json",
+                configuration.EndpointConfig.class);
+
         var items = ReaderService.getRssItems("https://www.vnexpress.net/rss/tin-moi-nhat.rss");
         var mapper = BingNewsService.mapperConfig.getChannels().get(0).getMapperConfig();
         var item = items.item(0);

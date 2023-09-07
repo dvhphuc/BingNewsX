@@ -6,6 +6,8 @@ import model.AdTopic;
 import model.Article;
 import org.json.JSONObject;
 import org.w3c.dom.Node;
+import service.mapper.ArticleMapperService;
+import service.mapper.IModelMapper;
 
 import java.io.File;
 import java.net.URI;
@@ -19,17 +21,17 @@ public class BingNewsService {
     public static NewsConfig newsConfig;
     public static MapperConfig mapperConfig;
     public static EndpointConfig endpointConfig;
-
-    public static <T> T readConfig(String configPath, Class<T> configClass) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(new File(configPath), configClass);
-    }
+    public static SportConfig sportConfig;
 
     public static NewsConfig getNewsConfig() {
         return newsConfig;
     }
 
+    private ReaderService reader;
+
+
     public static List<Article> getAllArticles() throws Exception {
+        var atcmapper = new ArticleMapperService();
         var articles = new ArrayList<Article>();
         var categories = newsConfig.getCategories();
 
@@ -38,8 +40,8 @@ public class BingNewsService {
                 var channelId = RssInfo.getChannelID();
                 var rssUrl = RssInfo.getURL();
                 var items = ReaderService.getRssItems(rssUrl);
-                var mappedItems = MapperService.mapItemsToArticles(items, mapperConfig, channelId);
-
+                var mappedItems = atcmapper.mapObjects(items, mapperConfig.getChannelById(channelId)
+                                .getMapperConfig());
                 articles.addAll(mappedItems);
             }
         }

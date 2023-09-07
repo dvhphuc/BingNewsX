@@ -16,23 +16,23 @@ import java.net.http.HttpResponse;
 public class Main {
     public static void main(String[] args) throws Exception {
 
+        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+                configuration.NewsConfig.class);
+        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
+                configuration.MapperConfig.class);
+        BingNewsService.endpointConfig = ReaderService.readConfig("src/main/resources/endpointTopNewsConfig.json",
+                configuration.EndpointConfig.class);
 
-//        var articles = BingNewsService.getAllArticles();
+
+        var articles = BingNewsService.getAllArticles();
 //        var adTopics = BingNewsService.getAllAdTopic();
-//        var topNews = BingNewsService.getTopNews();
+        var topNews = BingNewsService.getTopNews();
 //        var trendingNews = BingNewsService.getTrendingNews();
 //        var feed365 = BingNewsService.getFeed365();
 //        var weatherInfo = BingNewsService.getWeatherInfo();
 //        var financeInfo = BingNewsService.getFinanceInfo();
 //        var sportsInfo = BingNewsService.getSportsInfo();
 
-        var a = ReaderService.getMatchResultFromAPI();
-
-        for (int i=1; i<a.length(); i++) {
-            //System.out.println(a.getJSONObject(i));
-            var s = a.getJSONObject(i).getJSONObject("teams").getJSONObject("home").getString("name");
-            System.out.println(s);
-        }
     }
 
 }

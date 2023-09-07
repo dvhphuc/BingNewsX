@@ -5,6 +5,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import service.mapper.listconverter.IListConvert;
+import service.mapper.listconverter.JSONArrayConverter;
+import service.mapper.listconverter.NodeListConverter;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -50,19 +53,21 @@ public class ArticleMapperService implements IModelMapper<Article> {
     // Type of objects must be JSONArray or NodeList,... (multiple objects need to wrap in a list)
     public <T> List<Article> mapObjects(T objects, HashMap<String, String> mapper) throws Exception {
         var articles = new ArrayList<Article>();
+
+        IListConvert converter;
         if (objects instanceof JSONArray) {
-            var jsonObjects = (JSONArray) objects;
-            for (int i = 0; i < jsonObjects.length(); i++) {
-                articles.add(mapObject(jsonObjects.get(i), mapper));
-            }
+            converter = new JSONArrayConverter();
         } else if (objects instanceof NodeList) {
-            var nodes = (NodeList) objects;
-            for (int i = 0; i < nodes.getLength(); i++) {
-                articles.add(mapObject(nodes.item(i), mapper));
-            }
+            converter = new NodeListConverter();
         } else {
             throw new Exception("Invalid object type");
         }
+
+        List<Object> convertedObjects = converter.convert(objects);
+        for (Object object : convertedObjects) {
+            articles.add(mapObject(object, mapper));
+        }
+
         return articles;
     }
 

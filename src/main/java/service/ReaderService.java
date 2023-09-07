@@ -1,6 +1,7 @@
 package service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import configuration.Sportapi;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
@@ -13,8 +14,13 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 
 public class ReaderService {
+    public static <T> T readConfig(String configPath, Class<T> configClass) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(new java.io.File(configPath), configClass);
+    }
     public static NodeList getRssItems(String rssUrl) throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
@@ -32,17 +38,20 @@ public class ReaderService {
         return new JSONObject(responseString).getJSONArray(responseKey);
     }
 
-    public static JSONArray getMatchResultFromAPI() throws Exception {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api-football-beta.p.rapidapi.com/fixtures?date=2023-02-06"))
-                .header("X-RapidAPI-Key", "65e4f82b53msh001c94c3de4e044p16cf4fjsna8cbb2957755")
-                .header("X-RapidAPI-Host", "api-football-beta.p.rapidapi.com")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        //System.out.println(response.body());
+    public static JSONArray getMatchResultFromAPI(Sportapi sportapi) throws Exception {
+        var methodName = sportapi.getMethod();
+        var resonseKey = sportapi.getResponseKey();
 
-        return new JSONObject(response.body()).getJSONArray("response");
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create(sportapi.getURI()))
+                .header("X-RapidAPI-Key", sportapi.getHeader().get("X-RapidAPI-Key"))
+                .header("X-RapidAPI-Host", sportapi.getHeader().get("X-RapidAPI-Host"))
+                .method(methodName, HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        var response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        return new JSONObject(response.body()).getJSONArray(resonseKey);
     }
 
 }

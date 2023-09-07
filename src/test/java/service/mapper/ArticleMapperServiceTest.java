@@ -13,11 +13,9 @@ class ArticleMapperServiceTest {
     @Test
     void mapObject() throws Exception {
         BingNewsService bingNewsService = new BingNewsService();
-        BingNewsService.newsConfig = BingNewsService
-                .readConfig("src/main/resources/bingnewsconfig.json",
+        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
                         configuration.NewsConfig.class);
-        BingNewsService.mapperConfig = BingNewsService
-                .readConfig("src/main/resources/rssmapperconfig.json",
+        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
                         configuration.MapperConfig.class);
 
         var listRssItems = ReaderService.getRssItems("https://vnexpress.net/rss/tin-moi-nhat.rss");
@@ -33,12 +31,10 @@ class ArticleMapperServiceTest {
 
     @Test
     void mapObjects() throws Exception {
-        BingNewsService.newsConfig = BingNewsService
-                .readConfig("src/main/resources/bingnewsconfig.json",
-                        configuration.NewsConfig.class);
-        BingNewsService.mapperConfig = BingNewsService
-                .readConfig("src/main/resources/rssmapperconfig.json",
-                        configuration.MapperConfig.class);
+        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+                configuration.NewsConfig.class);
+        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
+                configuration.MapperConfig.class);
 
         BingNewsService bingNewsService = new BingNewsService();
         var listRssItems = ReaderService.getRssItems("https://vnexpress.net/rss/tin-moi-nhat.rss");
@@ -48,5 +44,6 @@ class ArticleMapperServiceTest {
         var mappedItems = articleMapperService.mapObjects(listRssItems, mapper);
 
         System.out.println(mappedItems.get(0).getTitle());
+        assert mappedItems.size() > 0;
     }
 }

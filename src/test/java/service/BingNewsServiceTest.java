@@ -27,14 +27,16 @@ class BingNewsServiceTest {
 
     @Test
     void testGetAllArticles() throws Exception {
-        String newsCfg = "src/main/resources/bingnewsconfig.json";
-        String mapperCfg = "src/main/resources/rssmapperconfig.json";
-        //BingNewsService.newsConfig = BingNewsService.readConfig(newsCfg, NewsConfig.class);
-        //BingNewsService.mapperConfig = BingNewsService.readConfig(mapperCfg, MapperConfig.class);
+        BingNewsService bingNewsService = new BingNewsService();
+        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+                configuration.NewsConfig.class);
+        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
+                configuration.MapperConfig.class);
 
         var articles = BingNewsService.getAllArticles();
 
-        assert (articles.size() > 0);
+        System.out.println(articles.get(0).getTitle());
+        assert (articles!=null);
     }
 
     @Test

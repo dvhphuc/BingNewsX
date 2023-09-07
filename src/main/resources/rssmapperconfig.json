@@ -17,7 +17,7 @@
         "pubDate": "pubDate",
         "guid": "guid",
         "sourceLink": "link",
-        "imgUrl": "enclosure#url"
+        "imgUrl": "enclosure"
       }
     }
   ]
