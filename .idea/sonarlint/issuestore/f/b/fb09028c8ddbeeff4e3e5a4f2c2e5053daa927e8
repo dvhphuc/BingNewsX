@@ -1,0 +1,8 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‚ô„8ƒş§‚§1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(½š¯ûÿÿÿÿ8„ş§‚§1
+k
+java:S6201"NReplace this instanceof check and cast with 'instanceof JSONObject jsonobject'(ªÿ¶8â’ª‚§1
+_
+java:S6201
+"BReplace this instanceof check and cast with 'instanceof Node node'(öö»Å8‡ş§‚§1

@@ -1,13 +1,13 @@
 
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¸”Œ©şÿÿÿÿ8ƒ¥Éö¦1
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¼œ¦è8ƒ¥Éö¦1
-g	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(ãƒÚøÿÿÿÿ8ƒ¥Éö¦1
-g	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(¡ãÅıÿÿÿÿ8¿Ìßö¦1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¸”Œ©şÿÿÿÿ8ùãĞƒ§1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¼œ¦è8ùãĞƒ§1
+g	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(ãƒÚøÿÿÿÿ8ùãĞƒ§1
+g	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(¡ãÅıÿÿÿÿ8Ÿ÷Òƒ§1
 ƒ
-java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "listItems".(¸™Ï‡ùÿÿÿÿ8„¥Éö¦1
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "listItems".(¸™Ï‡ùÿÿÿÿ8ùãĞƒ§1
 U
-java:S2755"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ8Œ¥Éö¦1
+java:S2755"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ8äĞƒ§1
 \
-java:S1118":Add a private constructor to hide the implicit public one.(Ş°é‚ıÿÿÿÿ8¥Éö¦1
+java:S1118":Add a private constructor to hide the implicit public one.(Ş°é‚ıÿÿÿÿ8äĞƒ§1
 M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÜÌßö¦1
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ß÷Òƒ§1

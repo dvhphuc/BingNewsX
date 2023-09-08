@@ -3,8 +3,6 @@
 +src/main/java/configuration/NewsConfig.java,2\9\292e9955f94571583749ff5cc136f102e209bf1e
 ^
 .src/test/java/service/BingNewsServiceTest.java,c\5\c5a6e800bbc44510fce33ca97d8d8eda9df2f983
-W
-'src/main/java/service/ParseService.java,a\f\afde6b25f26dea4e3f86d7199cda17a963ae0bb7
 S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 Z
@@ -15,8 +13,6 @@ P
  src/main/java/model/Article.java,9\9\99f4ea86658401191d1286ffc77aba6f6db602b1
 P
  src/main/java/model/TopNews.java,3\6\36828fd9aaf27aa7ed4d82c03cead99069864c69
-X
-(src/main/java/service/MapperService.java,1\8\1856667915a71fb987237db83a6c5381378a268a
 Y
 )src/main/java/configuration/Endpoint.java,c\a\ca480f772c66be13eed581fa698131cc1c873041
 _
@@ -43,10 +39,6 @@ _
 ,src/main/java/configuration/FinanceInfo.java,b\9\b9a3fb612235e7ad5e00dcee3c270d0b978048b6
 ]
 -src/main/java/configuration/MapperConfig.java,c\d\cdb08c57c72b67ee66d17066cead974b5236f029
-Y
-)src/test/java/service/MapServiceTest.java,7\8\787e334e688d487b6655512a946ffb4119b3150e
-U
-%src/main/java/service/MapService.java,6\4\64b26bdcd825c98e6c9f16c2e12042de6dd113a1
 \
 ,src/test/java/service/ReaderServiceTest.java,9\4\947bc780b31e90b9f95c7b936ed17352841b63fa
 q
@@ -69,15 +61,19 @@ j
 :src/test/java/service/mapper/ArticleMapperServiceTest.java,8\c\8c1cc9f81092a633404f1668feecc35e76caf535
 f
 6src/main/java/service/mapper/ArticleMapperService.java,1\4\147ed2c5ddc80b99d8c16efe691e65b31e0baaa4
-a
-1src/main/java/service/mapper/JsonValueGetter.java,d\4\d44ebe07387c5d3dd5f44d566c47b61a45f7b0fe
-c
-3src/main/java/service/mapper/IGetPropertyValue.java,7\c\7c376feb1deb2ffd78ffd3af79a06f0d998720a6
-`
-0src/main/java/service/mapper/RssValueGetter.java,5\a\5a73eebb9beb5dbdad4d06fb5320dd5deb8445b8
 d
 4src/main/java/service/mapper/SportMapperService.java,a\1\a1045fe3d4d0759d58ea1513969414af66c58dac
+q
+Asrc/main/java/service/mapper/gettetpropvalue/NodeValueGetter.java,1\e\1e9a9f8949bbe0a8b101c0acaea5089fc9332873
+t
+Dsrc/main/java/service/mapper/gettetpropvalue/GetterValueFactory.java,f\b\fb09028c8ddbeeff4e3e5a4f2c2e5053daa927e8
+q
+Asrc/main/java/service/mapper/gettetpropvalue/JsonValueGetter.java,e\5\e56fb1f5d3469bb82f5e6ad6b79d203bd2b1e5c7
+P
+ src/main/java/model/Weather.java,0\6\062a2c308114a40839871bc0bb2789652b93337c
 f
-6src/main/java/service/mapper/IGettingValueCreator.java,3\b\3bbbfc876a3e10868fc33aff5f6c632dfd4cb3b5
-d
-4src/main/java/service/mapper/GettingJsonCreator.java,6\9\69c24f8bccd65bd3315645c8c7d301290971a446
+6src/main/java/service/mapper/WeatherMapperService.java,d\9\d9f0b84ba7a322311c445d28bcefa10541ee462a
+p
+@src/main/java/service/mapper/listconverter/ConverterFactory.java,1\8\185a9a2d92234d73c7eeb24366bcdc01e8816233
+s
+Csrc/main/java/service/mapper/gettetpropvalue/IGetPropertyValue.java,2\2\225f7f35b9857a30d1309bcc7c4cfc8f1bf2562b

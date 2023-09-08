@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.w3c.dom.NodeList;
 
 public abstract class ConverterFactory<T> {
-
     public IListConvert<T> create(T o) throws Exception {
         if (o instanceof JSONArray) {
             return (IListConvert<T>) new JSONArrayConverter();
