@@ -1,6 +1,7 @@
-package configuration;
+package configuration.topnews;
 
 import com.fasterxml.jackson.annotation.*;
+
 import java.util.List;
 
 public class EndpointConfig {

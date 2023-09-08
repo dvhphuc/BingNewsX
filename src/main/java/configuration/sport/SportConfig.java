@@ -1,7 +1,8 @@
-package configuration;
+package configuration.sport;
 
 
 import com.fasterxml.jackson.annotation.*;
+
 import java.util.List;
 
 public class SportConfig {

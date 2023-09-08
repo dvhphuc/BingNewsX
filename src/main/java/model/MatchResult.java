@@ -1,4 +1,4 @@
-package configuration;
+package model;
 
 public class MatchResult {
     String league;

@@ -1,4 +1,4 @@
-package configuration;
+package configuration.sport;
 
 import com.fasterxml.jackson.annotation.*;
 

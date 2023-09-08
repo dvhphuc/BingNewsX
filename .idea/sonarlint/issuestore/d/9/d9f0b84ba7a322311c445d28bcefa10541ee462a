@@ -1,3 +1,7 @@
 
 j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(”Á¯êüÿÿÿÿ8¾ğ£ƒ§1
 j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(¾ª£úÿÿÿÿ8Âğ£ƒ§1
+H
+java:S1168"+Return an empty collection instead of null.(¥¹ï8Â„õš§1
+S
+java:S1128"6Remove this unused import 'configuration.WeatherInfo'.(ìÛø8Â„õš§1

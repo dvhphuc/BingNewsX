@@ -1,22 +1,19 @@
 package service.mapper;
 
+import configuration.article.MapperConfig;
 import org.junit.jupiter.api.Test;
 import service.BingNewsService;
 import service.ReaderService;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class ArticleMapperServiceTest {
 
     @Test
-    void mapObject() throws Exception {
+    void testMapObjectToArticle() throws Exception {
         BingNewsService bingNewsService = new BingNewsService();
-        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+        BingNewsService.newsConfig = ReaderService.getConfig("src/main/resources/bingnewsconfig.json",
                         configuration.NewsConfig.class);
-        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
-                        configuration.MapperConfig.class);
+        BingNewsService.mapperConfig = ReaderService.getConfig("src/main/resources/rssmapperconfig.json",
+                        MapperConfig.class);
 
         var listRssItems = ReaderService.getRssItems("https://vnexpress.net/rss/tin-moi-nhat.rss");
 
@@ -30,11 +27,11 @@ class ArticleMapperServiceTest {
     }
 
     @Test
-    void mapObjects() throws Exception {
-        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+    void testMapObjectsToListArticle() throws Exception {
+        BingNewsService.newsConfig = ReaderService.getConfig("src/main/resources/bingnewsconfig.json",
                 configuration.NewsConfig.class);
-        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
-                configuration.MapperConfig.class);
+        BingNewsService.mapperConfig = ReaderService.getConfig("src/main/resources/rssmapperconfig.json",
+                MapperConfig.class);
 
         BingNewsService bingNewsService = new BingNewsService();
         var listRssItems = ReaderService.getRssItems("https://vnexpress.net/rss/tin-moi-nhat.rss");

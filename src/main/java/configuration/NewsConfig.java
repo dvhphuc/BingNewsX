@@ -1,6 +1,8 @@
 package configuration;
 
 import com.fasterxml.jackson.annotation.*;
+import configuration.article.Category;
+
 import java.util.List;
 
 public class NewsConfig {

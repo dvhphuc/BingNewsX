@@ -1,10 +1,9 @@
 package service;
 
 
-import configuration.EndpointConfig;
-import configuration.MapperConfig;
-import configuration.NewsConfig;
-import org.json.JSONObject;
+import configuration.article.MapperConfig;
+import configuration.sport.SportConfig;
+import model.Weather;
 import org.junit.jupiter.api.Test;
 
 class BingNewsServiceTest {
@@ -27,10 +26,10 @@ class BingNewsServiceTest {
 
     @Test
     void testGetAllArticles() throws Exception {
-        BingNewsService.newsConfig = ReaderService.readConfig("src/main/resources/bingnewsconfig.json",
+        BingNewsService.newsConfig = ReaderService.getConfig("src/main/resources/bingnewsconfig.json",
                 configuration.NewsConfig.class);
-        BingNewsService.mapperConfig = ReaderService.readConfig("src/main/resources/rssmapperconfig.json",
-                configuration.MapperConfig.class);
+        BingNewsService.mapperConfig = ReaderService.getConfig("src/main/resources/rssmapperconfig.json",
+                MapperConfig.class);
 
         var articles = BingNewsService.getAllArticles();
 
@@ -68,20 +67,22 @@ class BingNewsServiceTest {
     }
 
     @Test
-    void getSportInfo() throws Exception {
-        BingNewsService.sportConfig = ReaderService.readConfig("src/main/resources/sportconfig.json",
-                configuration.SportConfig.class);
+    void testGetSportsInfo() throws Exception {
+        BingNewsService.sportConfig = ReaderService.getConfig("src/main/resources/sportConfig.json",
+                SportConfig.class);
+        var sportsInfo = BingNewsService.getSportInfo();
 
-        var sportInfo = BingNewsService.getSportInfo();
-        for (var result : sportInfo) {
-            System.out.println(result.getHomeTeam() + " " + result.getHomeScore() + " - " + result.getAwayScore() + " " + result.getAwayTeam());
-        }
-        assert (sportInfo.size() > 0);
+        assert (sportsInfo.size() > 0);
     }
     @Test
-    void getWeatherInfo() {
-        var weatherInfo = BingNewsService.getWeatherInfo();
-        assert (weatherInfo != null);
+    void getWeatherInfo() throws Exception {
+        BingNewsService.weatherConfig = ReaderService.getConfig("src/main/resources/weatherconfig.json",
+                configuration.weather.WeatherConfig.class);
+        var weathersInfo = BingNewsService.getWeatherInfo();
+        for (Weather weather : weathersInfo) {
+            System.out.println(weather.getLocation() + " " + weather.getTemperatureC() + " " + weather.getTime());
+        }
+        assert (weathersInfo.size() > 0);
     }
 
     @Test

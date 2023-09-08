@@ -1,8 +1,7 @@
-package configuration;
+package configuration.article;
 
 import com.fasterxml.jackson.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class MapperConfig {

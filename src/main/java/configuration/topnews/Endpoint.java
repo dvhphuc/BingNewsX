@@ -1,4 +1,4 @@
-package configuration;
+package configuration.topnews;
 
 import com.fasterxml.jackson.annotation.*;
 

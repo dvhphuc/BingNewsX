@@ -1,0 +1,16 @@
+{
+  "weatherapis": [
+    {
+      "name": "HanoiWeather",
+      "endpoint": "http://api.weatherapi.com/v1/forecast.json?key=01e03d8c40e245f9b21170504231208&q=Hanoi&days=1&aqi=no&alerts=no",
+      "responseKey": "forecast.forecastday.hour",
+      "location": "Hanoi",
+      "mapper": {
+        "time": "time",
+        "temperatureC": "temp_c",
+        "humidity": "humidity",
+        "iconUrl": "condition.icon"
+      }
+    }
+  ]
+}

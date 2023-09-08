@@ -3,15 +3,11 @@
 
 package service.mapper;
 
-import configuration.MatchResult;
-import org.json.JSONArray;
+import model.MatchResult;
 import org.json.JSONObject;
 import service.mapper.gettetpropvalue.GetterValueFactory;
-import service.mapper.gettetpropvalue.IGetPropertyValue;
-import service.mapper.gettetpropvalue.JsonValueGetter;
 import service.mapper.listconverter.ConverterFactory;
 import service.mapper.listconverter.IListConvert;
-import service.mapper.listconverter.JSONArrayConverter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +15,7 @@ import java.util.List;
 
 //Map Another Object To MatchResult Model
 public class SportMapperService implements IModelMapper<MatchResult> {
+    // Map multi type of Object (JSONObject, XMLObject) to <MatchResult> Model
     @Override
     public <T> MatchResult mapObject(T object, HashMap<String, String> mapper) throws Exception {
         var getterPropValue = new GetterValueFactory<T>() {}.create(object);

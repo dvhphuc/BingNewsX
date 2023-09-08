@@ -1,20 +1,18 @@
 package service.mapper;
 
-import configuration.SportConfig;
+import configuration.sport.SportConfig;
 import org.junit.jupiter.api.Test;
 import service.BingNewsService;
 import service.ReaderService;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class SportMapperServiceTest {
 
     @Test
-    void mapObject() throws Exception {
+    void testMapObjectToMatchResult() throws Exception {
         //Hey copilot can you add config for this test?
         BingNewsService bingNewsService = new BingNewsService();
 
-        BingNewsService.sportConfig = ReaderService.readConfig("src/main/resources/sportConfig.json",
+        BingNewsService.sportConfig = ReaderService.getConfig("src/main/resources/sportConfig.json",
                 SportConfig.class);
 
         var firstAPIInCfg = BingNewsService.sportConfig.getSportapis().get(0);
@@ -30,8 +28,8 @@ class SportMapperServiceTest {
     }
 
     @Test
-    void mapObjects() throws Exception {
-        BingNewsService.sportConfig = ReaderService.readConfig("src/main/resources/sportConfig.json",
+    void testMapObjectsToListMatchResult() throws Exception {
+        BingNewsService.sportConfig = ReaderService.getConfig("src/main/resources/sportConfig.json",
                 SportConfig.class);
 
         var firstAPIInCfg = BingNewsService.sportConfig.getSportapis().get(0);

@@ -1,7 +1,5 @@
 package model;
 
-import configuration.Channel;
-
 public class TopNews {
     public TopNews() {
     }

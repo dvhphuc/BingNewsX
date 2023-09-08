@@ -1,11 +1,19 @@
 package service;
 
 import configuration.*;
+import configuration.article.MapperConfig;
+import configuration.sport.SportConfig;
+import configuration.topnews.EndpointConfig;
+import configuration.weather.WeatherConfig;
 import model.AdTopic;
 import model.Article;
+import model.MatchResult;
+import model.Weather;
 import org.w3c.dom.Node;
 import service.mapper.ArticleMapperService;
 import service.mapper.SportMapperService;
+import service.mapper.WeatherMapperService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +22,7 @@ public class BingNewsService {
     public static MapperConfig mapperConfig;
     public static EndpointConfig endpointConfig;
     public static SportConfig sportConfig;
-
-    public static NewsConfig getNewsConfig() {
-        return newsConfig;
-    }
-
-    private ReaderService reader;
+    public static WeatherConfig weatherConfig;
 
 
     public static List<Article> getAllArticles() throws Exception {
@@ -66,8 +69,16 @@ public class BingNewsService {
         }
         return sportInfo;
     }
-    public static WeatherInfo getWeatherInfo() { //
-        return null;
+    public static List<Weather> getWeatherInfo() throws Exception { //
+        var weatherInfos = new ArrayList<Weather>();
+        var weatherMapper = new WeatherMapperService();
+        for (var weatherApi : weatherConfig.getWeatherapis()) {
+            var items = ReaderService.getWeatherJsonFromAPI(weatherApi);
+            var mappedItems = weatherMapper.mapObjects(items, weatherApi.getMapper());
+            mappedItems = weatherMapper.setLocation(mappedItems, weatherApi.getLocation());
+            weatherInfos.addAll(mappedItems);
+        }
+        return weatherInfos;
     }
 
 

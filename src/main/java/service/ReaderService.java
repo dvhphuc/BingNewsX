@@ -1,7 +1,8 @@
 package service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import configuration.Sportapi;
+import configuration.sport.Sportapi;
+import configuration.weather.WeatherApi;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
@@ -17,7 +18,7 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 public class ReaderService {
-    public static <T> T readConfig(String configPath, Class<T> configClass) throws Exception {
+    public static <T> T getConfig(String configPath, Class<T> configClass) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(new java.io.File(configPath), configClass);
     }
@@ -54,4 +55,24 @@ public class ReaderService {
         return new JSONObject(response.body()).getJSONArray(resonseKey);
     }
 
+    public static JSONArray getWeatherJsonFromAPI(WeatherApi weatherApi) throws Exception {
+        var url = new URL(weatherApi.getEndpoint());
+        var connection = url.openConnection();
+        var response = connection.getInputStream();
+        var responseString = new String(response.readAllBytes());
+
+        //logic to get the array from the response
+        List<String> subKeys = List.of(weatherApi.getResponseKey().split("\\."));
+        var forecast = subKeys.get(0);
+        var forecastday = subKeys.get(1);
+        var hour = subKeys.get(2);
+
+        JSONObject jsonObject = new JSONObject(responseString);
+        var hourlyForecase = jsonObject.getJSONObject(forecast)
+                .getJSONArray(forecastday)
+                .getJSONObject(0)
+                .getJSONArray(hour);
+
+        return hourlyForecase;
+    }
 }

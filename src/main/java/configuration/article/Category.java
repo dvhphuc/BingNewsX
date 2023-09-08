@@ -1,5 +1,7 @@
-package configuration;
+package configuration.article;
 import com.fasterxml.jackson.annotation.*;
+import configuration.article.RSSInfo;
+
 import java.util.List;
 
 public class Category {
