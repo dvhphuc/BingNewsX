@@ -1,7 +1,11 @@
 
-j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(”Á¯êüÿÿÿÿ8¾ğ£ƒ§1
-j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(¾ª£úÿÿÿÿ8Âğ£ƒ§1
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8Â„õš§1
+Q
+java:S3740"/Provide the parametrized type for this generic.(„ÊÇÿÿÿÿÿ8Âı›Ÿ§1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö³ÉÑ8Âı›Ÿ§1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş”—8Âı›Ÿ§1
+m	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºåµ¢8­·Ÿ§1
+r	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓˆÍœşÿÿÿÿ8Ãı›Ÿ§1
+j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(”Á¯êüÿÿÿÿ8Îı›Ÿ§1
+j	java:S119%"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(¾ª£úÿÿÿÿ8Òı›Ÿ§1
 S
-java:S1128"6Remove this unused import 'configuration.WeatherInfo'.(ìÛø8Â„õš§1
+java:S1128"6Remove this unused import 'configuration.WeatherInfo'.(ìÛø8Ôı›Ÿ§1

@@ -1,6 +1,7 @@
 package configuration.weather;
 
 import com.fasterxml.jackson.annotation.*;
+
 import java.util.List;
 
 public class WeatherConfig {

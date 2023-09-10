@@ -1,3 +1,4 @@
+//Article Mapper is used to map any type object (JSON,XML,RSS)  to Article object
 package service.mapper;
 
 import model.Article;

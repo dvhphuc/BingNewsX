@@ -33,6 +33,5 @@ class WeatherMapperServiceTest {
         var weatherMapperService = new WeatherMapperService();
         var mapper = weatherApi.getMapper();
         var weathers = weatherMapperService.mapObjects(weatherItems, mapper);
-        weathers.forEach(weather -> System.out.println(weather.getTemperatureC()));
     }
 }

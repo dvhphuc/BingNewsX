@@ -1,0 +1,15 @@
+
+Š
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(’Âó¦8‘š®Ÿ§1
+
+java:S1319!"bThe type of "value" should be an interface such as "Map" rather than the implementation "HashMap".(òôà°8‘š®Ÿ§1
+s
+java:S4144$"WUpdate this method so that its implementation is not identical to "getName" on line 16.(ôèŠx8ÒÍ±Ÿ§1
+t
+java:S4144&"WUpdate this method so that its implementation is not identical to "setName" on line 18.(óÈçÅ8ÒÍ±Ÿ§1
+d
+java:S4275$"HRefactor this getter so that it actually refers to the field "location".(ôèŠx8ÖÍ±Ÿ§1
+e
+java:S4275&"HRefactor this setter so that it actually refers to the field "location".(óÈçÅ8ÖÍ±Ÿ§1
+N
+java:S1068",Remove this unused "location" private field.(Ìöïüÿÿÿÿ8•²°Ÿ§1

@@ -1,30 +1,9 @@
 
-X
-java:S1854";Remove this useless assignment to local variable "topNews".(µ ˆú8†Ëö¦1
-^
-java:S1854"<Remove this useless assignment to local variable "articles".( ‡óÈùÿÿÿÿ8†Ëö¦1
-O
-java:S1481"-Remove this unused "articles" local variable.( ‡óÈùÿÿÿÿ8†Ëö¦1
-]	java:S125"<This block of commented-out lines of code should be removed.(à‘˜øÿÿÿÿ8†Ëö¦1
-I
-java:S1481",Remove this unused "topNews" local variable.(µ ˆú8†Ëö¦1
-X	java:S125"<This block of commented-out lines of code should be removed.(¯¬´ 8†Ëö¦1
-R
-java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8Ÿ†Ëö¦1
-M
-java:S1128"1Remove this unused import 'org.json.JSONTokener'.(øèê28Ÿ†Ëö¦1
-M
-java:S1128"0Remove this unused import 'org.w3c.dom.Element'.(øÊÎ8Ÿ†Ëö¦1
-O
-java:S1128"-Remove this unused import 'org.w3c.dom.Node'.(ùŠÿËıÿÿÿÿ8Ÿ†Ëö¦1
-F
-java:S1128
-")Remove this unused import 'java.net.URI'.(Ö¦¨°8Ÿ†Ëö¦1
-K
-java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8Ÿ†Ëö¦1
-W
-java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8Ÿ†Ëö¦1
-X
-java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8Ÿ†Ëö¦1
-Y
-java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8Ÿ†Ëö¦1
+]	java:S125"<This block of commented-out lines of code should be removed.(ïÉĞ‚úÿÿÿÿ8³²Ò€¨1
+X	java:S125"<This block of commented-out lines of code should be removed.(¨Œ¤â8³²Ò€¨1
+G	java:S106/"+Replace this use of System.out by a logger.(ù¿Åé8·²Ò€¨1
+]	java:S1251"<This block of commented-out lines of code should be removed.(ñ•äüÿÿÿÿ8·²Ò€¨1
+\
+java:S1128"?Remove this unused import 'configuration.article.MapperConfig'.(ïæô8Í‹Ô€¨1
+c
+java:S1128"ARemove this unused import 'configuration.topnews.EndpointConfig'.(Ë†ÏÔÿÿÿÿÿ8Í‹Ô€¨1
