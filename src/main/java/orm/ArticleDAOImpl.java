@@ -2,6 +2,8 @@ package orm;
 
 import model.Article;
 
+import java.util.List;
+
 public class ArticleDAOImpl implements DAO<Article>{
     @Override
     public void save(Article object) {
@@ -20,6 +22,11 @@ public class ArticleDAOImpl implements DAO<Article>{
 
     @Override
     public Article get(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Article> getAll() {
         return null;
     }
 }

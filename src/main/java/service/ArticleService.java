@@ -1,5 +1,6 @@
 package service;
 
+import configuration.Configuration;
 import configuration.NewsConfig;
 import configuration.article.MapperConfig;
 import model.Article;
@@ -13,10 +14,10 @@ public class ArticleService implements IService<Article> {
     private MapperConfig mapperConfig;
     private ArticleMapperService articleMapperService;
 
-    public ArticleService() {
-        newsConfig = null;
-        mapperConfig = null;
-        articleMapperService = null;
+    public ArticleService() throws Exception {
+        newsConfig = new Configuration().getNewsConfig();
+        mapperConfig = new Configuration().getMapperConfig();
+        articleMapperService = new ArticleMapperService();
     }
 
     public ArticleService(NewsConfig newsConfig, MapperConfig mapperConfig, ArticleMapperService atcMapperService) {

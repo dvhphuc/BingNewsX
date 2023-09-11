@@ -1,5 +1,6 @@
 package service;
 
+import configuration.Configuration;
 import configuration.weather.WeatherConfig;
 import model.Weather;
 import service.mapper.WeatherMapperService;
@@ -10,8 +11,8 @@ import java.util.List;
 public class WeatherService implements IService {
     private WeatherConfig weatherConfig;
 
-    public WeatherService(WeatherConfig _weatherConfig) {
-        weatherConfig = _weatherConfig;
+    public WeatherService() throws Exception {
+        weatherConfig = new Configuration().getWeatherConfig();
     }
     @Override
     public List getAll() throws Exception {

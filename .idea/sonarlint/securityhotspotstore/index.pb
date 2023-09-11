@@ -99,3 +99,5 @@ Y
 )src/main/java/service/TopNewsService.java,b\6\b6bdeb838637cd8427dc66f3b7dd89be9211ced4
 Y
 )src/main/java/service/WeatherService.java,b\5\b558493f2afd5dbcb8d0aad3490ff6041f77c62c
+Q
+!src/main/java/orm/Connection.java,4\4\44adb61b6796d1c892d2d83e7aea58a2f88c6936
