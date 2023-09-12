@@ -1,6 +1,7 @@
 package configuration;
 
 import configuration.article.MapperConfig;
+import configuration.financial.FinancialConfig;
 import configuration.sport.SportConfig;
 import configuration.topnews.EndpointConfig;
 import configuration.weather.WeatherConfig;
@@ -8,11 +9,12 @@ import service.ReaderService;
 
 public class Configuration {
 
-    private String NEWSCFG_PATH = "src/main/resources/bingnewsconfig.json";
-    private String MAPPERCFG_PATH = "src/main/resources/rssmapperconfig.json";
-    private String ENDPOINTCFG_PATH = "src/main/resources/endpointTopNewsConfig.json";
-    private String SPORTCFG_PATH = "src/main/resources/sportconfig.json";
-    private String WEATHERCFG_PATH = "src/main/resources/weatherconfig.json";
+    private final String NEWSCFG_PATH = "src/main/resources/bingnewsconfig.json";
+    private final String MAPPERCFG_PATH = "src/main/resources/rssmapperconfig.json";
+    private final String ENDPOINTCFG_PATH = "src/main/resources/endpointTopNewsConfig.json";
+    private final String SPORTCFG_PATH = "src/main/resources/sportconfig.json";
+    private final String WEATHERCFG_PATH = "src/main/resources/weatherconfig.json";
+    private final String FINANCECFG_PATH = "src/main/resources/financialConfig.json";
 
     NewsConfig newsConfig;
 
@@ -20,6 +22,16 @@ public class Configuration {
     EndpointConfig endpointConfig;
     SportConfig sportConfig;
     WeatherConfig weatherConfig;
+
+    public FinancialConfig getFinancialConfig() {
+        return financialConfig;
+    }
+
+    public void setFinancialConfig(FinancialConfig financialConfig) {
+        this.financialConfig = financialConfig;
+    }
+
+    FinancialConfig financialConfig;
 
     public NewsConfig getNewsConfig() {
         return newsConfig;
@@ -67,5 +79,6 @@ public class Configuration {
         endpointConfig = ReaderService.getConfig(ENDPOINTCFG_PATH, EndpointConfig.class);
         sportConfig = ReaderService.getConfig(SPORTCFG_PATH, SportConfig.class);
         weatherConfig = ReaderService.getConfig(WEATHERCFG_PATH, WeatherConfig.class);
+        financialConfig = ReaderService.getConfig(FINANCECFG_PATH, FinancialConfig.class);
     }
 }

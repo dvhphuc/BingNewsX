@@ -46,8 +46,4 @@ public class BingNewsService {
         return sportService.getAll();
     }
 
-    public List<T> getFinanceInfo() throws Exception {
-        var stockInfo =
-    }
-
 }

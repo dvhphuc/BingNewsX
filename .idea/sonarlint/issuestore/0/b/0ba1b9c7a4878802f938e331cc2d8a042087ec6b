@@ -1,9 +1,25 @@
 
-]	java:S125"<This block of commented-out lines of code should be removed.(ïÉĞ‚úÿÿÿÿ8³²Ò€¨1
-X	java:S125"<This block of commented-out lines of code should be removed.(¨Œ¤â8³²Ò€¨1
-G	java:S106/"+Replace this use of System.out by a logger.(ù¿Åé8·²Ò€¨1
-]	java:S1251"<This block of commented-out lines of code should be removed.(ñ•äüÿÿÿÿ8·²Ò€¨1
+T
+java:S1854"7Remove this useless assignment to local variable "cfg".(óğíá8Æšœ¥¨1
+E
+java:S1481"(Remove this unused "cfg" local variable.(óğíá8Èšœ¥¨1
 \
-java:S1128"?Remove this unused import 'configuration.article.MapperConfig'.(ïæô8Í‹Ô€¨1
+java:S1128"?Remove this unused import 'configuration.article.MapperConfig'.(ïæô8á·Ø¤¨1
 c
-java:S1128"ARemove this unused import 'configuration.topnews.EndpointConfig'.(Ë†ÏÔÿÿÿÿÿ8Í‹Ô€¨1
+java:S1128"ARemove this unused import 'configuration.topnews.EndpointConfig'.(Ë†ÏÔÿÿÿÿÿ8á·Ø¤¨1
+R
+java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8™á¤¨1
+A
+java:S1128"$Remove this unused import 'service'.(ÓµÓ³8Éšœ¥¨1
+]
+java:S1128";Remove this unused import 'service.factory.ServiceFactory'.(´ßµÁÿÿÿÿÿ8á·Ø¤¨1
+]
+java:S1128	"@Remove this unused import 'service.mapper.ArticleMapperService'.(×Šá8á·Ø¤¨1
+F
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8™á¤¨1
+W
+java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8™á¤¨1
+X
+java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8™á¤¨1
+Y
+java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8™á¤¨1

@@ -1,6 +1,8 @@
 package service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import configuration.financial.CryptosCfg;
+import configuration.financial.CurExchangesCfg;
 import configuration.sport.Sportapi;
 import configuration.weather.WeatherApi;
 import org.json.JSONArray;
@@ -15,6 +17,7 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Arrays;
 import java.util.List;
 
 public class ReaderService {
@@ -74,5 +77,47 @@ public class ReaderService {
                 .getJSONArray(hour);
 
         return hourlyForecase;
+    }
+
+    public static JSONArray getCryptoInfo(CryptosCfg cryptosCfg) throws Exception {
+        var responseKey = cryptosCfg.getResponseKey();
+        var keys = Arrays.asList(responseKey.split("\\."));
+        var lastKey = keys.get(keys.size() - 1);
+        keys = keys.subList(0, keys.size() - 1);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(cryptosCfg.getURI()))
+                .header("X-RapidAPI-Key", cryptosCfg.getHeaders().getXRapidAPIKey())
+                .header("X-RapidAPI-Host", cryptosCfg.getHeaders().getXRapidAPIHost())
+                .method(cryptosCfg.getMethod(), HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        var jsonObject = new JSONObject(response.body());
+        for (String key : keys) {
+            try {
+                jsonObject = jsonObject.getJSONObject(key);
+            }
+            catch (Exception e) {
+                jsonObject = jsonObject.getJSONArray(key).getJSONObject(0);
+            }
+        }
+        return jsonObject.getJSONArray(lastKey);
+    }
+
+    public static JSONArray getCurrencyExchange(CurExchangesCfg curExchangesCfg) throws Exception {
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create(curExchangesCfg.getURL()))
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        var response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        var responseArray = new JSONArray(response.body());
+        var items = new JSONArray();
+        for (var i = 0; i < responseArray.length(); ++i) {
+            var item = responseArray.getJSONArray(i).getJSONObject(0);
+            items.put(item);
+        }
+        return items;
     }
 }

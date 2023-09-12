@@ -6,6 +6,18 @@ public class Article {
     String channelId;
     String pubDate;
 
+    public Article() {
+    }
+
+    public Article(String guid, String title, String imgUrl, String channelId, String pubDate, String sourceLink) {
+        this.title = title;
+        this.imgUrl = imgUrl;
+        this.channelId = channelId;
+        this.pubDate = pubDate;
+        this.guid = guid;
+        this.sourceLink = sourceLink;
+    }
+
     public String getGuid() {
         return guid;
     }
