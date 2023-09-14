@@ -1,21 +1,19 @@
 
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Úêïß8¢™¥¨1
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¼œ¦è8¢™¥¨1
-g	java:S112%"FDefine and throw a dedicated exception instead of using a generic one.(ãƒÚøÿÿÿÿ8¢™¥¨1
-g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(¡ãÅıÿÿÿÿ8¢™¥¨1
-b	java:S112="FDefine and throw a dedicated exception instead of using a generic one.(©ª”‚8¢™¥¨1
-b	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(âœ•ó8¢™¥¨1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Úêïß8İëä¼¨1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¼œ¦è8İëä¼¨1
+g	java:S112%"FDefine and throw a dedicated exception instead of using a generic one.(ãƒÚøÿÿÿÿ8İëä¼¨1
+g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(¡ãÅıÿÿÿÿ8İëä¼¨1
+b	java:S112="FDefine and throw a dedicated exception instead of using a generic one.(©ª”‚8İëä¼¨1
+b	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(âœ•ó8Şëä¼¨1
 r
-java:S11924"PDefine a constant instead of duplicating this literal "X-RapidAPI-Host" 3 times.(Í’öÉıÿÿÿÿ8¢™¥¨1
+java:S11924"PDefine a constant instead of duplicating this literal "X-RapidAPI-Host" 3 times.(Í’öÉıÿÿÿÿ8Şëä¼¨1
 l
-java:S11923"ODefine a constant instead of duplicating this literal "X-RapidAPI-Key" 3 times.(Ë±ƒ¹8¢™¥¨1
+java:S11923"ODefine a constant instead of duplicating this literal "X-RapidAPI-Key" 3 times.(Ë±ƒ¹8Şëä¼¨1
 ƒ
-java:S1488 "aImmediately return this expression instead of assigning it to the temporary variable "listItems".(¸™Ï‡ùÿÿÿÿ8‘¢™¥¨1
+java:S1488 "aImmediately return this expression instead of assigning it to the temporary variable "listItems".(¸™Ï‡ùÿÿÿÿ8ßëä¼¨1
 ˆ
-java:S1488J"fImmediately return this expression instead of assigning it to the temporary variable "hourlyForecase".(Ÿá´øÿÿÿÿ8‘¢™¥¨1
+java:S1488J"fImmediately return this expression instead of assigning it to the temporary variable "hourlyForecase".(Ÿá´øÿÿÿÿ8ßëä¼¨1
 U
-java:S2755"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ8°¢™¥¨1
+java:S2755"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ8ûëä¼¨1
 \
-java:S1118":Add a private constructor to hide the implicit public one.(Ş°é‚ıÿÿÿÿ8²¢™¥¨1
-h
-java:S1128"KRemove this unused import 'service.mapper.gettetpropvalue.JsonValueGetter'.(³—8Ğ¢™¥¨1
+java:S1118":Add a private constructor to hide the implicit public one.(Ş°é‚ıÿÿÿÿ8öÈç¼¨1

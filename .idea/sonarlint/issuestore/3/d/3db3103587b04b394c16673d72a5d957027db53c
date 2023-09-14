@@ -1,0 +1,10 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒõşõ¨1
+c
+java:S1989"AHandle the "RuntimeException" thrown here in a "try/catch" block.(Ò‚Òéüÿÿÿÿ8³õşõ¨1
+r
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(°È¤ˆıÿÿÿÿ8»õşõ¨1
+[
+java:S1128">Remove this unused import 'com.sun.net.httpserver.HttpServer'.( üà8»õşõ¨1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8»õşõ¨1

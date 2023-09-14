@@ -1,25 +1,27 @@
 
 T
-java:S1854"7Remove this useless assignment to local variable "cfg".(óğíá8Æšœ¥¨1
+java:S1854"7Remove this useless assignment to local variable "cfg".(óğíá8Ã×´ø¨1
 E
-java:S1481"(Remove this unused "cfg" local variable.(óğíá8Èšœ¥¨1
+java:S1481"(Remove this unused "cfg" local variable.(óğíá8™Ø´ø¨1
+L	java:S106"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8£Ø´ø¨1
 \
-java:S1128"?Remove this unused import 'configuration.article.MapperConfig'.(ïæô8á·Ø¤¨1
+java:S1128"?Remove this unused import 'configuration.article.MapperConfig'.(ïæô8¨Ø´ø¨1
 c
-java:S1128"ARemove this unused import 'configuration.topnews.EndpointConfig'.(Ë†ÏÔÿÿÿÿÿ8á·Ø¤¨1
+java:S1128"ARemove this unused import 'configuration.topnews.EndpointConfig'.(Ë†ÏÔÿÿÿÿÿ8©Ø´ø¨1
+V
+java:S1128"9Remove this unused import 'controller.ArticleController'.(Æõ8ªØ´ø¨1
+Q
+java:S1128"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ8ªØ´ø¨1
 R
-java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8™á¤¨1
+java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8ªØ´ø¨1
 A
-java:S1128"$Remove this unused import 'service'.(ÓµÓ³8Éšœ¥¨1
+java:S1128	"$Remove this unused import 'service'.(ÓµÓ³8«Ø´ø¨1
 ]
-java:S1128";Remove this unused import 'service.factory.ServiceFactory'.(´ßµÁÿÿÿÿÿ8á·Ø¤¨1
+java:S1128
+";Remove this unused import 'service.factory.ServiceFactory'.(´ßµÁÿÿÿÿÿ8«Ø´ø¨1
 ]
-java:S1128	"@Remove this unused import 'service.mapper.ArticleMapperService'.(×Šá8á·Ø¤¨1
-F
-java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8™á¤¨1
-W
-java:S1128"5Remove this unused import 'java.net.http.HttpClient'.(Œ³’Öşÿÿÿÿ8™á¤¨1
-X
-java:S1128"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8™á¤¨1
-Y
-java:S1128"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8™á¤¨1
+java:S1128"@Remove this unused import 'service.mapper.ArticleMapperService'.(×Šá8«Ø´ø¨1
+k
+java:S1128"IRemove this unused import 'service.mapper.CurrencyExchangeMapperService'.(ÕÁ¬¹ÿÿÿÿÿ8¬Ø´ø¨1
+_
+java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8¬Ø´ø¨1

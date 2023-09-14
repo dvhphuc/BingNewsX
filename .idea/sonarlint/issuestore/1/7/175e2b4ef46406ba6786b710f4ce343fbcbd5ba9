@@ -1,3 +1,9 @@
 
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Ñ°Ù®þÿÿÿÿ8©þ®¡§1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ãþë“8 Û´ø¨1
+j
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(ºÓÃ¿ùÿÿÿÿ8ÀÛ´ø¨1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¸™Å„ùÿÿÿÿ8ÂÛ´ø¨1
+X
+java:S6437"6Revoke and change this password, as it is compromised.(ºÓÃ¿ùÿÿÿÿ8ÞÛ´ø¨1
+O
+java:S1068"-Remove this unused "statement" private field.(„£„÷øÿÿÿÿ8äÛ´ø¨1

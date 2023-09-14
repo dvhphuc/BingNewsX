@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="BingNews" options="--add-exports java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED" />
+      <module name="BingNews" options="" />
     </option>
   </component>
 </project>

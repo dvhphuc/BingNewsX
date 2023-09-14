@@ -1,32 +1,52 @@
 package orm;
 
 import configuration.sport.SportInfo;
+import model.MatchResult;
 
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
-public class SportDAOImp implements DAO<SportInfo> {
+public class SportDAOImp implements DAO<MatchResult> {
     @Override
-    public void save(SportInfo object) {
+    public void save(MatchResult object) {
 
     }
 
     @Override
-    public void update(SportInfo object) {
+    public void update(MatchResult object) {
 
     }
 
     @Override
-    public void delete(SportInfo object) {
+    public void delete(MatchResult object) {
 
     }
 
     @Override
-    public SportInfo get(int id) {
+    public MatchResult get(int id) {
         return null;
     }
 
     @Override
-    public List<SportInfo> getAll() {
+    public List<MatchResult> getAll() {
+        try (var connection = DriverManager.getConnection(jdbcUrl)) {
+            var preparedStatement = connection.prepareStatement("SELECT * FROM sport");
+            var resultSet = preparedStatement.executeQuery();
+            var matchResults = new ArrayList<MatchResult>();
+            while (resultSet.next()) {
+                var homeTeam = resultSet.getString("HOMETEAM");
+                var awayTeam = resultSet.getString("AWAYTEAM");
+                var homeScore = resultSet.getString("HOMESCORE");
+                var awayScore = resultSet.getString("AWAYSCORE");
+                var matchResult = new MatchResult();
+                matchResults.add(matchResult);
+            }
+            return matchResults;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

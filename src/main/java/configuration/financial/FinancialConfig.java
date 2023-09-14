@@ -3,14 +3,14 @@ package configuration.financial;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FinancialConfig {
-    private CurExchangesCfg stocks;
+    private CryptosCfg stocks;
     private CryptosCfg cryptos;
     private CurExchangesCfg curExchanges;
 
     @JsonProperty("stocks")
-    public CurExchangesCfg getStocks() { return stocks; }
+    public CryptosCfg getStocks() { return stocks; }
     @JsonProperty("stocks")
-    public void setStocks(CurExchangesCfg value) { this.stocks = value; }
+    public void setStocks(CryptosCfg value) { this.stocks = value; }
 
     @JsonProperty("cryptos")
     public CryptosCfg getCryptos() { return cryptos; }

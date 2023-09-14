@@ -105,8 +105,6 @@ N
 src/main/java/model/Stock.java,6\d\6d47736e0e02b391e387ca72631b17aaa03479e7
 a
 1src/main/java/configuration/financial/Params.java,3\4\34249d9f9a48f2db189a35ddc5abfa4b50ede762
-g
-7src/main/java/configuration/financial/CurExchanges.java,6\1\61fa2877290e3e215c591b2cc61ff12e63ebe5ca
 b
 2src/main/java/configuration/financial/Headers.java,c\c\cc17444ba9449b1e9c6474c80e004f9ca9485a4d
 j
@@ -125,3 +123,25 @@ U
 %src/main/java/orm/WeatherDAOImpl.java,a\8\a8af6a6fda5afab7629fb6a899f4b59482fa3c79
 T
 $src/main/java/orm/CryptoDAOImpl.java,f\1\f1a21438d4dc5d5854a90fb49098254397f5f8c9
+o
+?src/main/java/service/mapper/CurrencyExchangeMapperService.java,e\2\e287de42c17232759117fa06577b993789e06912
+\
+,src/main/java/orm/SQLDatabaseConnection.java,4\7\4773d32bff08ff75ea7e9b44aa35745b371740fc
+j
+:src/main/java/configuration/financial/CurExchangesCfg.java,1\1\112732ce58887bce1d787e7ee7149d79d57c6716
+_
+/src/main/java/controller/ArticleController.java,3\d\3db3103587b04b394c16673d72a5d957027db53c
+g
+7src/main/java/service/FinanceService/CryptoService.java,4\0\405f4bbf1ad858d77dcf4cc424d281d3087077bf
+i
+9src/main/java/service/FinanceService/CurrencyService.java,8\1\818e2b6da1784859e237a0ad3b3342995c8a954d
+k
+;src/test/java/service/FinanceService/CryptoServiceTest.java,a\d\adc6b1d6adc6fd47b2cd34bf5126a4bd415174e6
+m
+=src/test/java/service/FinanceService/CurrencyServiceTest.java,2\6\2677bdfc251178bd4235f0205cb2327179689884
+X
+(src/main/java/org/example/MyServlet.java,e\c\ecb663ec3a6858accdef63e595d0278f25d204c9
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+Y
+)src/test/java/orm/ArticleDAOImplTest.java,6\b\6b1fedf0f589dba16ca24e1557ac25da8ed062c5

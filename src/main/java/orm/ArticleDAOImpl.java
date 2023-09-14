@@ -3,13 +3,25 @@ package orm;
 import model.Article;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleDAOImpl implements DAO<Article>{
-    private List<Article> articles;
+    private List<Article> articles = new ArrayList<Article>();
     @Override
-    public void save(Article object) {
+    public void save(Article atc) throws SQLException {
+        String query = String.format("INSERT INTO articles (GUID, TITLE, IMGURL, PUBDATE, SOURCELINK) VALUES"
+                        + "('%s', '%s', '%s', '%s', '%s')",
+                        atc.getGuid(),
+                        atc.getTitle(),
+                        atc.getImgUrl(),
+                        atc.getPubDate(),
+                        atc.getSourceLink());
 
+        try (Connection connection = DriverManager.getConnection(jdbcUrl)) {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+        }
     }
 
     @Override
@@ -30,21 +42,19 @@ public class ArticleDAOImpl implements DAO<Article>{
     @Override
     public List<Article> getAll() {
         try (Connection connection = DriverManager.getConnection(jdbcUrl)) {
-            String sqlQuery = "SELECT * FROM article";
+            String sqlQuery = "SELECT * FROM articles";
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                String guid = resultSet.getString("guid");
-                String title = resultSet.getString("title");
-                String imageUrl = resultSet.getString("imageUrl");
-                String channelId = resultSet.getString("channelId");
-                String pubDate = resultSet.getString("pubDate");
-                String sourceLink = resultSet.getString("sourceLink");
+                String guid = resultSet.getString("GUID");
+                String title = resultSet.getString("TITLE");
+                String imageUrl = resultSet.getString("IMGURL");
+                String pubDate = resultSet.getString("PUBDATE");
+                String sourceLink = resultSet.getString("SOURCELINK");
                 // Add the retrieved student to the list
-                articles.add(new Article(guid, title, imageUrl, channelId, pubDate, sourceLink));
+                articles.add(new Article(guid, title, imageUrl, "vnexpress", pubDate, sourceLink));
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

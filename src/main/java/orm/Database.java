@@ -5,10 +5,17 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class Database {
-    public static final String URL = "jdbc:mysql://localhost:3306/orm";
+    static final String connectionUrl =
+            "jdbc:sqlserver://DVHPHUC.BingNews.windows.net:1433;"
+                    + "database=BingNews;"
+                    + "user=dvhphuc\\20520@DVHPHUC;"
+                    + "password=root;"
+                    + "encrypt=true;"
+                    + "trustServerCertificate=true;"
+                    + "loginTimeout=30;";
     private Statement statement;
     public Database() throws Exception {
-        Connection connection = DriverManager.getConnection(URL, "root", "root");
+        Connection connection = DriverManager.getConnection(connectionUrl, "root", "root");
         statement = connection.createStatement();
     }
 

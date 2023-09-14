@@ -1,9 +1,3 @@
 
-P
-java:S1068".Remove this unused "fromSymbol" private field.(·¦¥Èùÿÿÿÿ8¨®§¨1
-I
-java:S1068",Remove this unused "toSymbol" private field.(Ÿ¬Í§8©®§¨1
-R
-java:S1068"0Remove this unused "exchangeRate" private field.(÷ ´˜şÿÿÿÿ8©®§¨1
-N
-java:S1068	"1Remove this unused "lastRefreshed" private field.(é½û¯8©®§¨1
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Ä‡”¼¨1

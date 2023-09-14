@@ -1,9 +1,23 @@
 
+q
+java:S2095#"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ŞËÈÃüÿÿÿÿ8¸ŸÓú¨1
 £
-java:S1186	"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÿœÿÿÿÿÿ8¹‚®¨¨1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¨³œùÿÿÿÿ8˜İÑú¨1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—á‡øÿÿÿÿ8º‚®¨¨1
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢ÃßĞ8º‚®¨¨1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÔÔÒúÿÿÿÿ8˜İÑú¨1
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÇêÈÿùÿÿÿÿ8˜İÑú¨1
+J
+java:S1481'"-Remove this unused "homeTeam" local variable.(¸”Ÿ¨8¼ŸÓú¨1
+J
+java:S1481("-Remove this unused "awayTeam" local variable.(ÓßÊ8¼ŸÓú¨1
+P
+java:S1481)".Remove this unused "homeScore" local variable.(£Ò¸—üÿÿÿÿ8¼ŸÓú¨1
+P
+java:S1481*".Remove this unused "awayScore" local variable.(Ì²íÆıÿÿÿÿ8½ŸÓú¨1
 H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8µû®¨¨1
+java:S11682"+Return an empty collection instead of null.(¥¹ï8÷¢Ôú¨1
+\
+java:S1128":Remove this unused import 'configuration.sport.SportInfo'.(üÑ¶ûÿÿÿÿ8½ŸÓú¨1
+L
+java:S1128"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8½ŸÓú¨1
