@@ -30,9 +30,9 @@ public class CurrencyExchangeMapperService implements IModelMapper<CurrencyExcha
     public <TypeOfObject> List<CurrencyExchange> mapObjects(TypeOfObject objects, HashMap<String, String> mapper) throws Exception {
         IListConvert<TypeOfObject> converter = new ConverterFactory<TypeOfObject>() {
         }.create(objects);
-        List<Object> convertedObjects = converter.convert(objects);
+        List<TypeOfObject> convertedObjects = converter.convert(objects);
         var currenciesExchange = new ArrayList<CurrencyExchange>();
-        for (Object object : convertedObjects) {
+        for (TypeOfObject object : convertedObjects) {
             currenciesExchange.add(mapObject(object, mapper));
         }
         return currenciesExchange;

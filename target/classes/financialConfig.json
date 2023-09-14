@@ -1,6 +1,18 @@
 {
   "stocks": {
-
+    "method": "GET",
+    "uri": "https://mboum-finance.p.rapidapi.com/qu/quote?symbol=AAPL%2CMSFT%2C%5ESPX%2C%5ENYA%2CGAZP.ME%2CSIBN.ME%2CGEECEE.NS",
+    "headers": {
+      "X-RapidAPI-Key": "65e4f82b53msh001c94c3de4e044p16cf4fjsna8cbb2957755",
+      "X-RapidAPI-Host": "mboum-finance.p.rapidapi.com"
+    },
+    "mapper" : {
+      "name": "shortName",
+      "symbol": "symbol",
+      "price": "regularMarketPrice",
+      "percentChange24h": "regularMarketChangePercent",
+      "logoUrl": "logo_url"
+    }
   },
   "cryptos": {
       "method": "GET",
